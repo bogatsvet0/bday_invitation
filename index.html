@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анна и Иван | Мы женимся!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Главный экран -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Анна <span>&</span> Иван</h1>
+            <p>15 июля 2024</p>
+            <p>Мы женимся!</p>
+        </div>
+    </section>
+
+    <!-- Наша история -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Наша история</h2>
+            <p>Мы встретились холодным осенним вечером... [Ваш текст здесь]</p>
+            <!-- Можно добавить таймлайн или несколько фото -->
+        </div>
+    </section>
+
+    <!-- Детали события -->
+    <section id="details" class="details">
+        <div class="container">
+            <h2>Детали свадьбы</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h3>Церемония</h3>
+                    <p>15 июля 2024, 15:00</p>
+                    <p>Дворцовая площадь, 1<br>Санкт-Петербург</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Банкет</h3>
+                    <p>15 июля 2024, 17:00</p>
+                    <p>Ресторан "Времена Года"<br>Невский проспект, 50</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="gallery">
+        <h2>Наши моменты</h2>
+        <div class="gallery-grid">
+            <img src="photo1.jpg" alt="Фото 1">
+            <img src="photo2.jpg" alt="Фото 2">
+            <img src="photo3.jpg" alt="Фото 3">
+            <!-- Добавьте больше фото -->
+        </div>
+    </section>
+
+    <!-- RSVP Форма -->
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <h2>Подтвердите ваше присутствие</h2>
+            <p>Пожалуйста, ответьте до 1 июля 2024 года.</p>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Ваш Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="guests">Количество гостей</label>
+                <select id="guests" name="guests">
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <label for="message">Ваши пожелания или аллергии</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>С любовью, Анна и Иван</p>
+    </footer>
+</body>
+</html>
