@@ -5,31 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Татьяна | 50 лет в стиле Гэтсби</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cinzel:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Блестки -->
+    <div class="glitter"></div>
+    <div class="glitter"></div>
+    <div class="glitter"></div>
+    
     <!-- Главный экран -->
     <section id="home" class="hero">
-        <div class="gold-overlay"></div>
         <div class="hero-content">
-            <div class="decoration top-left"><i class="fas fa-feather-alt"></i></div>
-            <div class="decoration top-right"><i class="fas fa-crown"></i></div>
+            <div class="anniversary-badge">
+                <div class="number-50">50</div>
+                <div class="years">лет</div>
+            </div>
             
             <h1 class="main-title">Татьяна</h1>
+            
             <div class="divider">
                 <div class="line"></div>
                 <div class="diamond"></div>
                 <div class="line"></div>
             </div>
+            
             <p class="subtitle">Приглашает на свой юбилей</p>
             <p class="date">27 декабря 2025</p>
             <p class="time">17:00</p>
             <p class="theme">В стиле Великого Гэтсби</p>
             
-            <div class="decoration bottom-left"><i class="fas fa-gem"></i></div>
-            <div class="decoration bottom-right"><i class="fas fa-champagne-glass"></i></div>
+            <div class="decoration left-top"><i class="fas fa-feather-alt"></i></div>
+            <div class="decoration right-top"><i class="fas fa-crown"></i></div>
+            <div class="decoration left-bottom"><i class="fas fa-gem"></i></div>
+            <div class="decoration right-bottom"><i class="fas fa-champagne-glass"></i></div>
         </div>
+        
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -63,6 +74,36 @@
                     <h3>Дресс-код</h3>
                     <p>Gatsby Style</p>
                     <p>Блеск и элегантность</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Примеры дресс-кода -->
+    <section id="dresscode-examples" class="dresscode-examples">
+        <div class="container">
+            <h2 class="section-title">Вдохновение для образа</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-image" style="background-image: url('dress-example1.jpg')"></div>
+                    <div class="example-info">
+                        <h3>Для нее</h3>
+                        <p>Платья с бахромой, жемчуг, перья</p>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <div class="example-image" style="background-image: url('dress-example2.jpg')"></div>
+                    <div class="example-info">
+                        <h3>Для него</h3>
+                        <p>Костюмы-тройки, бабочки, шляпы</p>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <div class="example-image" style="background-image: url('dress-example3.jpg')"></div>
+                    <div class="example-info">
+                        <h3>Аксессуары</h3>
+                        <p>Броши, длинные бусы, перчатки</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,12 +154,24 @@
                 <div class="dresscode-info">
                     <h3>Золотые двадцатые</h3>
                     <p>Мы приглашаем вас окунуться в эпоху джаза, блеска и роскоши</p>
-                    <ul>
-                        <li>🪩 Платья с бахромой и нитями жемчуга</li>
-                        <li>🎩 Костюмы в стиле ар-деко</li>
-                        <li>💎 Аксессуары с перьями и стразами</li>
-                        <li>✨ Блестящие детали и атлас</li>
-                    </ul>
+                    <div class="dresscode-features">
+                        <div class="feature">
+                            <i class="fas fa-female"></i>
+                            <span>Платья с бахромой и нитями жемчуга</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-male"></i>
+                            <span>Костюмы в стиле ар-деко</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-gem"></i>
+                            <span>Аксессуары с перьями и стразами</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-sparkles"></i>
+                            <span>Блестящие детали и атлас</span>
+                        </div>
+                    </div>
                     <p class="inspiration">Дайте волю своей фантазии и создайте образ, достойный великих вечеринок Джей Гэтсби!</p>
                 </div>
             </div>
@@ -133,17 +186,14 @@
             
             <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
                 <div class="form-group">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" id="name" name="name" required placeholder="Как вас представить?">
+                    <input type="text" id="name" name="name" required placeholder="Ваше имя">
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Ваш Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Для связи с вами">
+                    <input type="email" id="email" name="email" required placeholder="Ваш Email">
                 </div>
                 
                 <div class="form-group">
-                    <label for="guests">Количество гостей</label>
                     <select id="guests" name="guests">
                         <option value="1">1 человек</option>
                         <option value="2" selected>2 человека</option>
@@ -153,8 +203,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="message">Ваши пожелания или диетические предпочтения</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Поделитесь вашими мыслями..."></textarea>
+                    <textarea id="message" name="message" rows="4" placeholder="Ваши пожелания или диетические предпочтения"></textarea>
                 </div>
                 
                 <button type="submit" class="submit-btn">
@@ -177,37 +226,31 @@
     </footer>
 
     <script>
+        // Создание блесток
+        function createGlitter() {
+            const glitterContainer = document.body;
+            const glitterCount = 50;
+            
+            for (let i = 0; i < glitterCount; i++) {
+                const glitter = document.createElement('div');
+                glitter.className = 'glitter-particle';
+                glitter.style.left = Math.random() * 100 + 'vw';
+                glitter.style.animationDelay = Math.random() * 5 + 's';
+                glitter.style.animationDuration = (3 + Math.random() * 3) + 's';
+                glitterContainer.appendChild(glitter);
+            }
+        }
+        
         // Плавная прокрутка
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('#details').scrollIntoView({
+                behavior: 'smooth'
             });
         });
-
-        // Анимация появления элементов при скролле
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Наблюдаем за карточками и другими элементами
-        document.querySelectorAll('.detail-card, .timeline-item, .dresscode-info').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        
+        // Запуск при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            createGlitter();
         });
     </script>
 </body>

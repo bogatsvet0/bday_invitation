@@ -8,18 +8,21 @@
 :root {
     --gold: #D4AF37;
     --dark-gold: #B8860B;
+    --light-gold: #F5E6B3;
     --black: #1a1a1a;
     --cream: #F5F5DC;
     --charcoal: #2F2F2F;
     --transparent-gold: rgba(212, 175, 55, 0.1);
+    --dark-red: #8B0000;
 }
 
 body {
     font-family: 'Cinzel', serif;
     line-height: 1.6;
     color: var(--cream);
-    background: linear-gradient(135deg, var(--charcoal) 0%, var(--black) 100%);
+    background: linear-gradient(135deg, #0c0c0c 0%, #2d1b07 100%);
     overflow-x: hidden;
+    position: relative;
 }
 
 .container {
@@ -28,25 +31,60 @@ body {
     padding: 0 2rem;
 }
 
+/* Блестки */
+.glitter-particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--light-gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    animation: glitter-fall linear infinite;
+}
+
+@keyframes glitter-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
 /* Главный экран */
 .hero {
-    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.9)), 
-                url('gOfycQu6B34.jpg') center/cover;
+    background: 
+        linear-gradient(rgba(20, 20, 20, 0.7), rgba(40, 20, 0, 0.8)),
+        url('party-background.jpg') center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-.gold-overlay {
+.hero::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 0%, var(--transparent-gold) 50%, transparent 100%);
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -57,18 +95,54 @@ body {
     padding: 2rem;
 }
 
-.main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 8rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    animation: glow 2s ease-in-out infinite alternate;
+/* Юбилейный значок */
+.anniversary-badge {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
 }
 
-@keyframes glow {
-    from { text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); }
-    to { text-shadow: 3px 3px 20px var(--gold), 0 0 30px var(--gold); }
+.number-50 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 8rem;
+    color: var(--gold);
+    text-shadow: 
+        0 0 20px var(--gold),
+        0 0 40px var(--dark-gold),
+        0 0 60px rgba(212, 175, 55, 0.5);
+    line-height: 1;
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    from {
+        text-shadow: 
+            0 0 20px var(--gold),
+            0 0 40px var(--dark-gold),
+            0 0 60px rgba(212, 175, 55, 0.5);
+    }
+    to {
+        text-shadow: 
+            0 0 30px var(--gold),
+            0 0 60px var(--dark-gold),
+            0 0 90px rgba(212, 175, 55, 0.8);
+    }
+}
+
+.years {
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-top: -1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .divider {
@@ -80,54 +154,63 @@ body {
 
 .line {
     width: 100px;
-    height: 2px;
+    height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 .diamond {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background: var(--gold);
     transform: rotate(45deg);
-    margin: 0 1rem;
+    margin: 0 1.5rem;
+    box-shadow: 0 0 10px var(--gold);
 }
 
 .subtitle {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .date, .time {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
     color: var(--gold);
     font-weight: bold;
 }
 
 .theme {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 2rem;
     font-style: italic;
     color: var(--cream);
     border: 1px solid var(--gold);
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     display: inline-block;
-    border-radius: 30px;
+    border-radius: 25px;
+    background: rgba(212, 175, 55, 0.1);
 }
 
+/* Декоративные элементы */
 .decoration {
     position: absolute;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--gold);
-    opacity: 0.7;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
 }
 
-.top-left { top: 20%; left: 10%; }
-.top-right { top: 20%; right: 10%; }
-.bottom-left { bottom: 20%; left: 10%; }
-.bottom-right { bottom: 20%; right: 10%; }
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.left-top { top: 10%; left: 5%; animation-delay: 0s; }
+.right-top { top: 10%; right: 5%; animation-delay: 0.5s; }
+.left-bottom { bottom: 10%; left: 5%; animation-delay: 1s; }
+.right-bottom { bottom: 10%; right: 5%; animation-delay: 1.5s; }
 
 .scroll-indicator {
     position: absolute;
@@ -137,6 +220,8 @@ body {
     color: var(--gold);
     font-size: 2rem;
     animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 10;
 }
 
 @keyframes bounce {
@@ -148,11 +233,12 @@ body {
 /* Секции */
 section {
     padding: 5rem 0;
+    position: relative;
 }
 
 .section-title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--gold);
     margin-bottom: 3rem;
     position: relative;
@@ -164,14 +250,14 @@ section {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 80px;
     height: 2px;
-    background: var(--gold);
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 /* Детали события */
 .details {
-    background: var(--transparent-gold);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
 }
 
 .details-grid {
@@ -184,20 +270,38 @@ section {
 .detail-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 2.5rem 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     border: 1px solid var(--gold);
     backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.detail-card:hover::before {
+    transform: rotate(45deg) translate(50%, 50%);
 }
 
 .detail-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
 }
 
 .detail-card .icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--gold);
     margin-bottom: 1rem;
 }
@@ -208,9 +312,65 @@ section {
     font-size: 1.3rem;
 }
 
+/* Примеры дресс-кода */
+.dresscode-examples {
+    background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.example-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--gold);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.example-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.example-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.example-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(20, 20, 20, 0.9));
+}
+
+.example-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.example-info h3 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Остальные стили (программа, дресс-код, RSVP, футер) остаются похожими на предыдущую версию, но адаптированные под новый дизайн */
+
 /* Программа вечера */
 .program {
-    background: linear-gradient(135deg, var(--charcoal) 0%, var(--black) 100%);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
 }
 
 .timeline {
@@ -253,7 +413,7 @@ section {
 
 .time {
     flex: 0 0 120px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--gold);
     background: var(--charcoal);
@@ -268,17 +428,18 @@ section {
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid var(--gold);
+    backdrop-filter: blur(10px);
 }
 
 .event h3 {
     color: var(--gold);
     margin-bottom: 0.5rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 /* Дресс-код */
 .dresscode {
-    background: var(--transparent-gold);
+    background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
 }
 
 .dresscode-content {
@@ -301,16 +462,22 @@ section {
     margin-bottom: 1.5rem;
 }
 
-.dresscode-info ul {
-    list-style: none;
+.dresscode-features {
     margin: 2rem 0;
-    text-align: left;
-    display: inline-block;
 }
 
-.dresscode-info li {
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1rem;
     font-size: 1.1rem;
+}
+
+.feature i {
+    color: var(--gold);
+    margin-right: 1rem;
+    font-size: 1.2rem;
 }
 
 .inspiration {
@@ -322,13 +489,13 @@ section {
 
 /* RSVP Форма */
 .rsvp {
-    background: linear-gradient(135deg, var(--charcoal) 0%, var(--black) 100%);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
 }
 
 .rsvp-subtitle {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
 }
 
@@ -346,19 +513,12 @@ section {
     margin-bottom: 2rem;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--gold);
-    font-weight: bold;
-}
-
 input, select, textarea {
     width: 100%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--gold);
-    border-radius: 5px;
+    border-radius: 8px;
     color: var(--cream);
     font-family: 'Cinzel', serif;
     font-size: 1rem;
@@ -368,7 +528,8 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--dark-gold);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 input::placeholder, textarea::placeholder {
@@ -390,13 +551,13 @@ input::placeholder, textarea::placeholder {
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
 
 /* Футер */
 .footer {
-    background: var(--charcoal);
+    background: linear-gradient(135deg, var(--charcoal) 0%, #1a0f00 100%);
     text-align: center;
     padding: 3rem 0;
     border-top: 1px solid var(--gold);
@@ -416,15 +577,23 @@ input::placeholder, textarea::placeholder {
 
 /* Адаптивность */
 @media (max-width: 768px) {
+    .number-50 {
+        font-size: 5rem;
+    }
+    
     .main-title {
         font-size: 4rem;
     }
     
     .date, .time {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .examples-grid {
         grid-template-columns: 1fr;
     }
     
