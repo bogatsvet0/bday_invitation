@@ -3,90 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анна и Иван | Мы женимся!</title>
+    <title>Татьяна | 50 лет в стиле Гэтсби</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Главный экран -->
     <section id="home" class="hero">
-        <div class="hero-text">
-            <h1>Анна <span>&</span> Иван</h1>
-            <p>15 июля 2024</p>
-            <p>Мы женимся!</p>
+        <div class="gold-overlay"></div>
+        <div class="hero-content">
+            <div class="decoration top-left"><i class="fas fa-feather-alt"></i></div>
+            <div class="decoration top-right"><i class="fas fa-crown"></i></div>
+            
+            <h1 class="main-title">Татьяна</h1>
+            <div class="divider">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <p class="subtitle">Приглашает на свой юбилей</p>
+            <p class="date">27 декабря 2025</p>
+            <p class="time">17:00</p>
+            <p class="theme">В стиле Великого Гэтсби</p>
+            
+            <div class="decoration bottom-left"><i class="fas fa-gem"></i></div>
+            <div class="decoration bottom-right"><i class="fas fa-champagne-glass"></i></div>
         </div>
-    </section>
-
-    <!-- Наша история -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Наша история</h2>
-            <p>Мы встретились холодным осенним вечером... [Ваш текст здесь]</p>
-            <!-- Можно добавить таймлайн или несколько фото -->
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- Детали события -->
     <section id="details" class="details">
         <div class="container">
-            <h2>Детали свадьбы</h2>
+            <h2 class="section-title">Детали Вечера</h2>
             <div class="details-grid">
-                <div class="detail-item">
-                    <h3>Церемония</h3>
-                    <p>15 июля 2024, 15:00</p>
-                    <p>Дворцовая площадь, 1<br>Санкт-Петербург</p>
+                <div class="detail-card">
+                    <div class="icon"><i class="fas fa-calendar-day"></i></div>
+                    <h3>Дата</h3>
+                    <p>27 декабря 2025</p>
+                    <p>Суббота</p>
                 </div>
-                <div class="detail-item">
-                    <h3>Банкет</h3>
-                    <p>15 июля 2024, 17:00</p>
-                    <p>Ресторан "Времена Года"<br>Невский проспект, 50</p>
+                <div class="detail-card">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <h3>Время</h3>
+                    <p>17:00</p>
+                    <p>Коктейльный час</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Место</h3>
+                    <p>Ресторан "Винтаж"</p>
+                    <p>Зал "Золотые двадцатые"</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon"><i class="fas fa-mask"></i></div>
+                    <h3>Дресс-код</h3>
+                    <p>Gatsby Style</p>
+                    <p>Блеск и элегантность</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Галерея -->
-    <section id="gallery" class="gallery">
-        <h2>Наши моменты</h2>
-        <div class="gallery-grid">
-            <img src="photo1.jpg" alt="Фото 1">
-            <img src="photo2.jpg" alt="Фото 2">
-            <img src="photo3.jpg" alt="Фото 3">
-            <!-- Добавьте больше фото -->
+    <!-- Программа вечера -->
+    <section id="program" class="program">
+        <div class="container">
+            <h2 class="section-title">Программа Вечера</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">17:00</div>
+                    <div class="event">
+                        <h3>Коктейльный прием</h3>
+                        <p>Шампанское и джаз</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">18:30</div>
+                    <div class="event">
+                        <h3>Торжественный ужин</h3>
+                        <p>Гастрономическое путешествие</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">20:00</div>
+                    <div class="event">
+                        <h3>Тост в честь Татьяны</h3>
+                        <p>Теплые слова и воспоминания</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">21:00</div>
+                    <div class="event">
+                        <h3>Чарльстон и танцы</h3>
+                        <p>Великолепная музыка 20-х</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- RSVP Форма -->
+    <!-- Дресс-код -->
+    <section id="dresscode" class="dresscode">
+        <div class="container">
+            <h2 class="section-title">Дресс-код</h2>
+            <div class="dresscode-content">
+                <div class="dresscode-info">
+                    <h3>Золотые двадцатые</h3>
+                    <p>Мы приглашаем вас окунуться в эпоху джаза, блеска и роскоши</p>
+                    <ul>
+                        <li>🪩 Платья с бахромой и нитями жемчуга</li>
+                        <li>🎩 Костюмы в стиле ар-деко</li>
+                        <li>💎 Аксессуары с перьями и стразами</li>
+                        <li>✨ Блестящие детали и атлас</li>
+                    </ul>
+                    <p class="inspiration">Дайте волю своей фантазии и создайте образ, достойный великих вечеринок Джей Гэтсби!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
     <section id="rsvp" class="rsvp">
         <div class="container">
-            <h2>Подтвердите ваше присутствие</h2>
-            <p>Пожалуйста, ответьте до 1 июля 2024 года.</p>
-            <form action="https://formspree.io/f/xwprwnpq" method="POST">
-                <label for="name">Ваше имя</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Ваш Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="guests">Количество гостей</label>
-                <select id="guests" name="guests">
-                    <option value="1">1</option>
-                    <option value="2" selected>2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-
-                <label for="message">Ваши пожелания или аллергии</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-
-                <button type="submit">Отправить</button>
+            <h2 class="section-title">Подтвердите присутствие</h2>
+            <p class="rsvp-subtitle">Пожалуйста, ответьте до 1 декабря 2025 года</p>
+            
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required placeholder="Как вас представить?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Ваш Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Для связи с вами">
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Количество гостей</label>
+                    <select id="guests" name="guests">
+                        <option value="1">1 человек</option>
+                        <option value="2" selected>2 человека</option>
+                        <option value="3">3 человека</option>
+                        <option value="4">4 человека</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Ваши пожелания или диетические предпочтения</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Поделитесь вашими мыслями..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Отправить ответ
+                </button>
             </form>
         </div>
     </section>
 
     <!-- Футер -->
-    <footer>
-        <p>С любовью, Анна и Иван</p>
+    <footer class="footer">
+        <div class="container">
+            <p>С нетерпением ждем этого волшебного вечера!</p>
+            <p class="signature">Татьяна</p>
+            <div class="social-links">
+                <p>По вопросам: +7 XXX XXX-XX-XX</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Наблюдаем за карточками и другими элементами
+        document.querySelectorAll('.detail-card, .timeline-item, .dresscode-info').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
