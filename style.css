@@ -326,6 +326,49 @@ section {
     text-decoration: underline;
 }
 
+/* Теплое обращение */
+.welcome-message {
+    margin: 4rem auto 3rem;
+    max-width: 800px;
+    text-align: center;
+}
+
+.message-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid var(--gold);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.message-icon {
+    color: var(--gold);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.message-content h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Great Vibes', cursive;
+}
+
+.message-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.signature-small {
+    font-family: 'Great Vibes', cursive;
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
 /* Фото лофта */
 .venue-photo {
     margin-top: 3rem;
@@ -366,161 +409,107 @@ section {
     font-size: 1.5rem;
 }
 
-/* Дресс-код */
+/* Компактный дресс-код */
 .dresscode {
     background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
 }
 
-.dresscode-header {
-    text-align: center;
-    margin-bottom: 3rem;
+.dresscode-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid var(--gold);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    gap: 2rem;
 }
 
-.dresscode-header h3 {
+.dress-image {
+    flex: 0 0 180px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--gold);
+}
+
+.left-image {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(139, 0, 0, 0.1) 100%);
+}
+
+.right-image {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(212, 175, 55, 0.2) 100%);
+}
+
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     color: var(--gold);
-    font-size: 2.5rem;
+    text-align: center;
+}
+
+.image-placeholder i {
+    font-size: 4rem;
     margin-bottom: 1rem;
+}
+
+.image-placeholder p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.dresscode-info-compact {
+    flex: 1;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.dresscode-info-compact h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
     font-family: 'Great Vibes', cursive;
 }
 
-.dresscode-header p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0.9;
+.dress-features {
+    margin-bottom: 1.5rem;
 }
 
-.dresscode-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.dresscode-info {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
-    border-radius: 15px;
-    border: 1px solid var(--gold);
-    backdrop-filter: blur(10px);
-}
-
-.dresscode-features {
-    margin-bottom: 2rem;
-}
-
-.feature {
+.feature-compact {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
     background: rgba(212, 175, 55, 0.05);
-    border-radius: 10px;
+    border-radius: 8px;
     border-left: 3px solid var(--gold);
-    transition: all 0.3s ease;
 }
 
-.feature:hover {
-    background: rgba(212, 175, 55, 0.1);
-    transform: translateX(5px);
-}
-
-.feature i {
+.feature-compact i {
     color: var(--gold);
-    font-size: 1.5rem;
-    margin-right: 1.5rem;
-    margin-top: 0.5rem;
-    flex-shrink: 0;
-}
-
-.feature h4 {
-    color: var(--gold);
-    margin-bottom: 0.5rem;
+    margin-right: 1rem;
     font-size: 1.2rem;
+    width: 20px;
 }
 
-.feature p {
-    margin: 0;
-    opacity: 0.9;
-    line-height: 1.5;
+.feature-compact span {
+    text-align: left;
+    flex: 1;
 }
 
-.inspiration {
+.dress-inspiration {
     font-style: italic;
     color: var(--gold);
-    text-align: center;
-    padding: 1.5rem;
-    background: rgba(212, 175, 55, 0.1);
-    border-radius: 10px;
-    border: 1px dashed var(--gold);
-}
-
-/* Примеры образов */
-.dresscode-examples {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid var(--gold);
-    backdrop-filter: blur(10px);
-}
-
-.dresscode-examples h3 {
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-}
-
-.examples-grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.example-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--gold);
-    transition: all 0.3s ease;
-}
-
-.example-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-}
-
-.example-image {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.example-image::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50%;
-    background: linear-gradient(transparent, rgba(20, 20, 20, 0.9));
-}
-
-.example-info {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.example-info h4 {
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.example-info p {
-    margin: 0;
-    opacity: 0.8;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
 }
 
 /* RSVP Форма */
@@ -629,13 +618,16 @@ input::placeholder, textarea::placeholder {
         grid-template-columns: 1fr;
     }
     
-    .examples-grid {
-        grid-template-columns: 1fr;
+    .dresscode-compact {
+        flex-direction: column;
+        padding: 1.5rem;
     }
     
-    .dresscode-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .dress-image {
+        flex: 0 0 150px;
+        height: 150px;
+        width: 100%;
+        max-width: 200px;
     }
     
     .venue-image {
@@ -658,13 +650,21 @@ input::placeholder, textarea::placeholder {
         padding: 2rem 1rem;
     }
     
-    .feature {
+    .welcome-message {
+        margin: 3rem auto 2rem;
+    }
+    
+    .message-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .feature-compact {
         flex-direction: column;
         text-align: center;
     }
     
-    .feature i {
+    .feature-compact i {
         margin-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 }

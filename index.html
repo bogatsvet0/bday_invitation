@@ -80,6 +80,17 @@
                 </div>
             </div>
             
+            <!-- Теплое обращение -->
+            <div class="welcome-message">
+                <div class="message-content">
+                    <i class="fas fa-heart message-icon"></i>
+                    <h3>Дорогой гость!</h3>
+                    <p>Я буду безмерно рада видеть именно Вас на своем празднике! Этот вечер я хочу провести в кругу самых родных и близких людей, разделив с вами радость этого особенного дня.</p>
+                    <p>Давайте вместе создадим атмосферу настоящего праздника - теплого, душевного и незабываемого! Жду вас с прекрасным настроением и готовностью веселиться от души!</p>
+                    <div class="signature-small">С любовью, Ваша Татьяна</div>
+                </div>
+            </div>
+            
             <!-- Фото лофта -->
             <div class="venue-photo">
                 <div class="photo-container">
@@ -98,50 +109,37 @@
         <div class="container">
             <h2 class="section-title">Дресс-код</h2>
             
-            <div class="dresscode-header">
-                <h3>Золотые двадцатые</h3>
-                <p>Мы приглашаем вас окунуться в эпоху джаза, блеска и роскоши 1920-х годов</p>
-            </div>
-
-            <div class="dresscode-content">
-                <div class="dresscode-info">
-                    <div class="dresscode-features">
-                        <div class="feature">
+            <div class="dresscode-compact">
+                <div class="dress-image left-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-female"></i>
+                        <p>Для нее</p>
+                    </div>
+                </div>
+                
+                <div class="dresscode-info-compact">
+                    <h3>Золотые двадцатые</h3>
+                    <div class="dress-features">
+                        <div class="feature-compact">
                             <i class="fas fa-female"></i>
-                            <div>
-                                <h4>Для нее</h4>
-                                <p>Платья с бахромой, нити жемчуга, декоративные головные уборы с перьями, блестящие аксессуары</p>
-                            </div>
+                            <span>Платья с бахромой, жемчужные нити, перья</span>
                         </div>
-                        <div class="feature">
+                        <div class="feature-compact">
                             <i class="fas fa-male"></i>
-                            <div>
-                                <h4>Для него</h4>
-                                <p>Костюмы-тройки, бабочки, шляпы-котелки, накрахмаленные воротнички, стильные трости</p>
-                            </div>
+                            <span>Костюмы-тройки, бабочки, шляпы-котелки</span>
+                        </div>
+                        <div class="feature-compact">
+                            <i class="fas fa-gem"></i>
+                            <span>Блестящие аксессуары и элегантность</span>
                         </div>
                     </div>
-                    
-                    <p class="inspiration">Дайте волю своей фантазии и создайте образ, достойный великих вечеринок Джей Гэтсби!</p>
+                    <p class="dress-inspiration">Создайте образ, достойный вечеринки Гэтсби!</p>
                 </div>
-
-                <div class="dresscode-examples">
-                    <h3>Вдохновение для образа</h3>
-                    <div class="examples-grid">
-                        <div class="example-card">
-                            <div class="example-image" style="background-image: url('dress-women.jpg')"></div>
-                            <div class="example-info">
-                                <h4>Для прекрасных дам</h4>
-                                <p>Элегантные платья с бахромой и жемчужные нити</p>
-                            </div>
-                        </div>
-                        <div class="example-card">
-                            <div class="example-image" style="background-image: url('dress-men.jpg')"></div>
-                            <div class="example-info">
-                                <h4>Для джентльменов</h4>
-                                <p>Классические костюмы и стильные аксессуары</p>
-                            </div>
-                        </div>
+                
+                <div class="dress-image right-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-male"></i>
+                        <p>Для него</p>
                     </div>
                 </div>
             </div>
@@ -191,7 +189,7 @@
         // Создание блесток
         function createGlitter() {
             const glitterContainer = document.body;
-            const glitterCount = 150; // Увеличил количество блесток
+            const glitterCount = 150;
             
             for (let i = 0; i < glitterCount; i++) {
                 const glitter = document.createElement('div');
@@ -202,7 +200,6 @@
                 glitter.style.width = (2 + Math.random() * 6) + 'px';
                 glitter.style.height = glitter.style.width;
                 
-                // Разные формы блесток
                 if (Math.random() > 0.7) {
                     glitter.style.borderRadius = '0';
                     glitter.style.transform = 'rotate(45deg)';
