@@ -312,323 +312,61 @@ section {
     font-size: 1.3rem;
 }
 
-/* Примеры дресс-кода */
-.dresscode-examples {
-    background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
+.map-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--light-gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
-.examples-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.map-link:hover {
+    color: var(--gold);
+    text-decoration: underline;
 }
 
-.example-card {
-    background: rgba(255, 255, 255, 0.05);
+/* Фото лофта */
+.venue-photo {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.photo-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid var(--gold);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    border: 2px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.example-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+.venue-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
 }
 
-.example-image {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.example-image::after {
-    content: '';
+.photo-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50%;
-    background: linear-gradient(transparent, rgba(20, 20, 20, 0.9));
-}
-
-.example-info {
-    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--cream);
+    padding: 2rem;
     text-align: center;
 }
 
-.example-info h3 {
+.photo-overlay h3 {
     color: var(--gold);
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-/* Остальные стили (программа, дресс-код, RSVP, футер) остаются похожими на предыдущую версию, но адаптированные под новый дизайн */
-
-/* Программа вечера */
-.program {
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
-}
-
-.timeline {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--gold);
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) {
-    flex-direction: row-reverse;
-    text-align: right;
-}
-
-.timeline-item:nth-child(odd) .time {
-    margin-left: 2rem;
-    margin-right: 0;
-}
-
-.timeline-item:nth-child(even) .time {
-    margin-right: 2rem;
-}
-
-.time {
-    flex: 0 0 120px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--gold);
-    background: var(--charcoal);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: 1px solid var(--gold);
-}
-
-.event {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid var(--gold);
-    backdrop-filter: blur(10px);
-}
-
-.event h3 {
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 /* Дресс-код */
-.dresscode {
-    background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
-}
-
-.dresscode-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.dresscode-info {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 3rem;
-    border-radius: 15px;
-    border: 1px solid var(--gold);
-    backdrop-filter: blur(10px);
-}
-
-.dresscode-info h3 {
-    color: var(--gold);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.dresscode-features {
-    margin: 2rem 0;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.feature i {
-    color: var(--gold);
-    margin-right: 1rem;
-    font-size: 1.2rem;
-}
-
-.inspiration {
-    font-style: italic;
-    color: var(--gold);
-    margin-top: 2rem;
-    font-size: 1.1rem;
-}
-
-/* RSVP Форма */
-.rsvp {
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
-}
-
-.rsvp-subtitle {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.rsvp-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 3rem;
-    border-radius: 15px;
-    border: 1px solid var(--gold);
-    backdrop-filter: blur(10px);
-}
-
-.form-group {
-    margin-bottom: 2rem;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--gold);
-    border-radius: 8px;
-    color: var(--cream);
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--dark-gold);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-input::placeholder, textarea::placeholder {
-    color: rgba(245, 245, 220, 0.6);
-}
-
-.submit-btn {
-    width: 100%;
-    background: linear-gradient(45deg, var(--gold), var(--dark-gold));
-    color: var(--black);
-    border: none;
-    padding: 1.2rem 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Cinzel', serif;
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-}
-
-/* Футер */
-.footer {
-    background: linear-gradient(135deg, var(--charcoal) 0%, #1a0f00 100%);
-    text-align: center;
-    padding: 3rem 0;
-    border-top: 1px solid var(--gold);
-}
-
-.signature {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    color: var(--gold);
-    margin: 1rem 0;
-}
-
-.social-links {
-    margin-top: 1rem;
-    opacity: 0.8;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .number-50 {
-        font-size: 5rem;
-    }
-    
-    .main-title {
-        font-size: 4rem;
-    }
-    
-    .date, .time {
-        font-size: 1.5rem;
-    }
-    
-    .details-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .examples-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .timeline::before {
-        left: 30px;
-    }
-    
-    .timeline-item {
-        flex-direction: row !important;
-        text-align: left !important;
-    }
-    
-    .timeline-item .time {
-        margin-right: 2rem !important;
-        margin-left: 0 !important;
-        flex: 0 0 100px;
-    }
-    
-    .decoration {
-        display: none;
-    }
-    
-    .hero-content {
-        padding: 1rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .rsvp-form {
-        padding: 2rem 1rem;
-    }
-}
-/* Дресс-код с примерами */
 .dresscode {
     background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
 }
@@ -752,7 +490,7 @@ input::placeholder, textarea::placeholder {
 }
 
 .example-image {
-    height: 200px;
+    height: 250px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -785,36 +523,139 @@ input::placeholder, textarea::placeholder {
     font-size: 0.9rem;
 }
 
-/* Адаптивность для нового раздела */
-@media (max-width: 968px) {
+/* RSVP Форма */
+.rsvp {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
+}
+
+.rsvp-subtitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid var(--gold);
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    color: var(--cream);
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--dark-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(245, 245, 220, 0.6);
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(45deg, var(--gold), var(--dark-gold));
+    color: var(--black);
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Футер */
+.footer {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #1a0f00 100%);
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid var(--gold);
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin: 1rem 0;
+}
+
+.social-links {
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .number-50 {
+        font-size: 5rem;
+    }
+    
+    .main-title {
+        font-size: 4rem;
+    }
+    
+    .date, .time {
+        font-size: 1.5rem;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .dresscode-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     
-    .dresscode-info,
-    .dresscode-examples {
-        padding: 2rem;
+    .venue-image {
+        height: 300px;
     }
     
-    .feature {
+    .decoration {
+        display: none;
+    }
+    
+    .hero-content {
         padding: 1rem;
     }
     
-    .feature i {
-        font-size: 1.3rem;
-        margin-right: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .dresscode-header h3 {
+    .section-title {
         font-size: 2rem;
     }
     
-    .dresscode-info,
-    .dresscode-examples {
-        padding: 1.5rem;
+    .rsvp-form {
+        padding: 2rem 1rem;
     }
     
     .feature {
@@ -825,9 +666,5 @@ input::placeholder, textarea::placeholder {
     .feature i {
         margin-right: 0;
         margin-bottom: 1rem;
-    }
-    
-    .example-image {
-        height: 150px;
     }
 }

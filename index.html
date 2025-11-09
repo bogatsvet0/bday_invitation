@@ -66,8 +66,11 @@
                 <div class="detail-card">
                     <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                     <h3>Место</h3>
-                    <p>Ресторан "Винтаж"</p>
+                    <p>Лофт "Пенка"</p>
                     <p>Зал "Золотые двадцатые"</p>
+                    <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="map-link">
+                        <i class="fas fa-map"></i> Посмотреть на карте
+                    </a>
                 </div>
                 <div class="detail-card">
                     <div class="icon"><i class="fas fa-mask"></i></div>
@@ -76,47 +79,14 @@
                     <p>Блеск и элегантность</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Программа вечера -->
-    <section id="program" class="program">
-        <div class="container">
-            <h2 class="section-title">Программа Вечера</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="time">17:00</div>
-                    <div class="event">
-                        <h3>Коктейльный прием</h3>
-                        <p>Шампанское и джаз</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">18:00</div>
-                    <div class="event">
-                        <h3>Поздравления и тосты в честь Татьяны</h3>
-                        <p>Теплые слова и пожелания</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">19:00</div>
-                    <div class="event">
-                        <h3>Игры и развлечения</h3>
-                        <p>Музыкальные и интеллектуальные игры для гостей</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">20:00</div>
-                    <div class="event">
-                        <h3>Праздничный ужин</h3>
-                        <p>Гастрономическое путешествие</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="time">21:00</div>
-                    <div class="event">
-                        <h3>Чарльстон и танцы</h3>
-                        <p>Великолепная музыка 20-х</p>
+            
+            <!-- Фото лофта -->
+            <div class="venue-photo">
+                <div class="photo-container">
+                    <img src="loft-penka.jpg" alt="Лофт Пенка" class="venue-image">
+                    <div class="photo-overlay">
+                        <h3>Лофт "Пенка"</h3>
+                        <p>Идеальное место для вечера в стиле Гэтсби</p>
                     </div>
                 </div>
             </div>
@@ -140,28 +110,14 @@
                             <i class="fas fa-female"></i>
                             <div>
                                 <h4>Для нее</h4>
-                                <p>Платья с бахромой, нити жемчуга, декоративные головные уборы с перьями</p>
+                                <p>Платья с бахромой, нити жемчуга, декоративные головные уборы с перьями, блестящие аксессуары</p>
                             </div>
                         </div>
                         <div class="feature">
                             <i class="fas fa-male"></i>
                             <div>
                                 <h4>Для него</h4>
-                                <p>Костюмы-тройки, бабочки, шляпы-котелки, накрахмаленные воротнички</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-gem"></i>
-                            <div>
-                                <h4>Аксессуары</h4>
-                                <p>Броши, длинные бусы, перчатки до локтя, трости, портсигары</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-sparkles"></i>
-                            <div>
-                                <h4>Стиль</h4>
-                                <p>Блестящие детали, атлас, бархат, стразы и искусственный жемчуг</p>
+                                <p>Костюмы-тройки, бабочки, шляпы-котелки, накрахмаленные воротнички, стильные трости</p>
                             </div>
                         </div>
                     </div>
@@ -173,24 +129,17 @@
                     <h3>Вдохновение для образа</h3>
                     <div class="examples-grid">
                         <div class="example-card">
-                            <div class="example-image" style="background-image: url('dress-example1.jpg')"></div>
+                            <div class="example-image" style="background-image: url('dress-women.jpg')"></div>
                             <div class="example-info">
-                                <h4>Элегантная леди</h4>
-                                <p>Платье с бахромой и жемчужные нити</p>
+                                <h4>Для прекрасных дам</h4>
+                                <p>Элегантные платья с бахромой и жемчужные нити</p>
                             </div>
                         </div>
                         <div class="example-card">
-                            <div class="example-image" style="background-image: url('dress-example2.jpg')"></div>
+                            <div class="example-image" style="background-image: url('dress-men.jpg')"></div>
                             <div class="example-info">
-                                <h4>Джентльмен</h4>
-                                <p>Классический костюм и бабочка</p>
-                            </div>
-                        </div>
-                        <div class="example-card">
-                            <div class="example-image" style="background-image: url('dress-example3.jpg')"></div>
-                            <div class="example-info">
-                                <h4>Аксессуары</h4>
-                                <p>Шляпки, перья и украшения</p>
+                                <h4>Для джентльменов</h4>
+                                <p>Классические костюмы и стильные аксессуары</p>
                             </div>
                         </div>
                     </div>
@@ -242,14 +191,23 @@
         // Создание блесток
         function createGlitter() {
             const glitterContainer = document.body;
-            const glitterCount = 50;
+            const glitterCount = 150; // Увеличил количество блесток
             
             for (let i = 0; i < glitterCount; i++) {
                 const glitter = document.createElement('div');
                 glitter.className = 'glitter-particle';
                 glitter.style.left = Math.random() * 100 + 'vw';
-                glitter.style.animationDelay = Math.random() * 5 + 's';
-                glitter.style.animationDuration = (3 + Math.random() * 3) + 's';
+                glitter.style.animationDelay = Math.random() * 8 + 's';
+                glitter.style.animationDuration = (2 + Math.random() * 4) + 's';
+                glitter.style.width = (2 + Math.random() * 6) + 'px';
+                glitter.style.height = glitter.style.width;
+                
+                // Разные формы блесток
+                if (Math.random() > 0.7) {
+                    glitter.style.borderRadius = '0';
+                    glitter.style.transform = 'rotate(45deg)';
+                }
+                
                 glitterContainer.appendChild(glitter);
             }
         }
