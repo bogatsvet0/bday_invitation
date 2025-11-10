@@ -5,21 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Татьяна | 50 лет в стиле Гэтсби</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Блестки -->
-    <div class="glitter"></div>
-    <div class="glitter"></div>
-    <div class="glitter"></div>
-    
-    <!-- Модальное окно для изображений -->
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-    
     <!-- Главный экран -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -28,22 +17,20 @@
                 <div class="years">лет</div>
             </div>
             
-            <h1 class="main-title" data-text="Татьяна">Татьяна</h1>
+            <h1 class="main-title">Татьяна</h1>
             
             <div class="divider">
                 <div class="line"></div>
-                <div class="crystal"></div>
+                <div class="deco-dot"></div>
                 <div class="line"></div>
             </div>
             
-            <p class="subtitle">Празднует свой юбилей</p>
-            <p class="date">27 декабря 2025</p>
-            <p class="time">17:00</p>
-            <p class="theme">на вечеринке в стиле Великого Гэтсби!</p>
-            
-            <div class="decoration left-top"><i class="fas fa-gem"></i></div>
-            <div class="decoration right-top"><i class="fas fa-crown"></i></div>
-            <div class="decoration right-bottom"><i class="fas fa-champagne-glass"></i></div>
+            <div class="hero-info">
+                <p class="subtitle">Празднует свой юбилей</p>
+                <p class="date">27 декабря 2025</p>
+                <p class="time">17:00</p>
+                <p class="theme">Вечер в стиле Великого Гэтсби</p>
+            </div>
         </div>
         
         <div class="scroll-indicator">
@@ -55,24 +42,25 @@
     <section id="details" class="details">
         <div class="container">
             <h2 class="section-title">Детали Вечера</h2>
+            
             <div class="details-grid">
                 <div class="detail-card">
                     <div class="icon"><i class="fas fa-calendar-day"></i></div>
                     <h3>Дата</h3>
                     <p>27 декабря 2025</p>
-                    <p>Суббота</p>
+                    <p class="card-note">Суббота</p>
                 </div>
                 <div class="detail-card">
                     <div class="icon"><i class="fas fa-clock"></i></div>
                     <h3>Время</h3>
                     <p>17:00</p>
-                    <p>Коктейльный час</p>
+                    <p class="card-note">Коктейльный час</p>
                 </div>
                 <div class="detail-card">
                     <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                     <h3>Место</h3>
                     <p>Лофт "Пенка"</p>
-                    <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="venue-link">
+                    <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="map-link">
                         <i class="fas fa-map"></i> Посмотреть на карте
                     </a>
                 </div>
@@ -80,111 +68,126 @@
                     <div class="icon"><i class="fas fa-mask"></i></div>
                     <h3>Дресс-код</h3>
                     <p>Gatsby Style</p>
-                    <p>Блеск и элегантность</p>
+                    <p class="card-note">Блеск и элегантность</p>
                 </div>
-            </div>
-            
-            <!-- Теплое обращение -->
-            <div class="welcome-message">
-                <div class="message-content">
-                    <i class="fas fa-heart message-icon"></i>
-                    <h3>Дорогой гость!</h3>
-                    <p>Я буду безмерно рада видеть именно тебя на своем празднике! Этот вечер я хочу провести в кругу самых родных и близких людей, разделив с вами радость этого особенного дня.</p>
-                    <p>Давайте вместе создадим атмосферу настоящего праздника - теплого, душевного и незабываемого! Жду вас с прекрасным настроением и готовностью веселиться от души!</p>
-                    <div class="signature-small">С любовью, Ваша Татьяна</div>
-                </div>
-            </div>
-
-            <!-- Расписание -->
-            <div class="schedule">
-                <h3 class="schedule-title">Программа Вечера</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">16:00</div>
-                            <div class="timeline-event">Фуршет</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">17:00</div>
-                            <div class="timeline-event">Поздравления и конкурсы</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">18:00</div>
-                            <div class="timeline-event">Праздничный ужин</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">19:00</div>
-                            <div class="timeline-event">Продолжение веселья</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Фото лофта -->
-            <div class="venue-photo">
-                <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="venue-link">
-                    <div class="photo-container">
-                        <img src="loft-penka.jpg" alt="Лофт Пенка" class="venue-image">
-                        <div class="photo-overlay">
-                            <h3>Лофт "Пенка"</h3>
-                            <p>Идеальное место для вечера в стиле Гэтсби</p>
-                            <div class="click-hint">Нажмите для просмотра на карте</div>
-                        </div>
-                    </div>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Дресс-код с примерами -->
+    <!-- Приглашение -->
+    <section id="invitation" class="invitation">
+        <div class="container">
+            <div class="message-content">
+                <div class="message-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>Дорогой гость!</h3>
+                <p>Я буду безмерно рада видеть именно тебя на своем празднике! Этот вечер я хочу провести в кругу самых родных и близких людей, разделив с вами радость этого особенного дня.</p>
+                <p>Давайте вместе создадим атмосферу настоящего праздника - теплого, душевного и незабываемого! Жду вас с прекрасным настроением и готовностью веселиться от души!</p>
+                <div class="signature">С любовью, Ваша Татьяна</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Расписание -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <h2 class="section-title">Программа Вечера</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">17:00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Фуршет</h4>
+                        <p>Коктейли и закуски</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">18:00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Поздравления</h4>
+                        <p>Торжественная часть</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">19:00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Ужин</h4>
+                        <p>Праздничный банкет</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">20:00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Танцы</h4>
+                        <p>Музыка и развлечения</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дресс-код -->
     <section id="dresscode" class="dresscode">
         <div class="container">
             <h2 class="section-title">Дресс-код</h2>
             
-            <div class="dresscode-compact">
-                <div class="dresscode-info-compact">
-                    <div class="dresscode-request">
-                        <p>Организаторы постарались сделать вечеринку в стиле золотых двадцатых. Дресс-код необязателен, но я буду очень признательна, если гости поддержат наш стиль и выберут одежду и аксессуары, приближенные к тематике. Так у нас будут самые красивые фотографии и настрой на веселье!</p>
-                    </div>
-                    <div class="dress-features">
-                        <div class="feature-compact">
-                            <i class="fas fa-female"></i>
-                            <span>Платья с бахромой, жемчужные нити, перья</span>
-                        </div>
-                        <div class="feature-compact">
-                            <i class="fas fa-male"></i>
-                            <span>Костюмы-тройки, бабочки, шляпы-котелки</span>
-                        </div>
-                        <div class="feature-compact">
-                            <i class="fas fa-gem"></i>
-                            <span>Блестящие аксессуары и элегантность</span>
-                        </div>
-                    </div>
-                    <p class="dress-inspiration">Создайте образ, достойный вечеринки Гэтсби!</p>
+            <div class="dresscode-content">
+                <div class="dresscode-intro">
+                    <p>Создайте образ, достойный вечеринки Гэтсби! Блеск, элегантность и роскошь 20-х годов.</p>
                 </div>
                 
-                <div class="dress-images-container">
-                    <div class="dress-image">
-                        <div class="image-placeholder">
-                            <img src="dress-example1.jpg" alt="Пример для женщин" class="dress-example-image">
-                            <p>Для нее</p>
+                <div class="dress-examples">
+                    <div class="dress-example">
+                        <div class="dress-icon">
+                            <i class="fas fa-female"></i>
                         </div>
+                        <h4>Для нее</h4>
+                        <ul>
+                            <li>Платья с бахромой</li>
+                            <li>Жемчужные нити</li>
+                            <li>Перья и диадемы</li>
+                        </ul>
                     </div>
-                    <div class="dress-image">
-                        <div class="image-placeholder">
-                            <img src="dress-example2.jpg" alt="Пример для мужчин" class="dress-example-image">
-                            <p>Для него</p>
+                    
+                    <div class="dress-example">
+                        <div class="dress-icon">
+                            <i class="fas fa-male"></i>
                         </div>
+                        <h4>Для него</h4>
+                        <ul>
+                            <li>Костюмы-тройки</li>
+                            <li>Бабочки</li>
+                            <li>Шляпы-котелки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Лофт -->
+    <section id="venue" class="venue">
+        <div class="container">
+            <h2 class="section-title">Место Проведения</h2>
+            
+            <div class="venue-content">
+                <div class="venue-info">
+                    <h3>Лофт "Пенка"</h3>
+                    <p>Идеальное место для вечера в стиле Гэтсби с атмосферой роскоши и уюта.</p>
+                    <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="venue-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Посмотреть на карте
+                    </a>
+                </div>
+                
+                <div class="venue-image">
+                    <img src="loft-penka.jpg" alt="Лофт Пенка">
+                    <div class="image-overlay">
+                        <i class="fas fa-expand"></i>
                     </div>
                 </div>
             </div>
@@ -200,33 +203,36 @@
             <form action="https://formspree.io/f/xwprwnpq" method="POST" class="rsvp-form">
                 <div class="form-group">
                     <label for="full-name">Ваше фамилия и имя:</label>
-                    <input type="text" id="full-name" name="name" required>
+                    <input type="text" id="full-name" name="name" required placeholder="Введите ваше полное имя">
                 </div>
                 
                 <div class="form-group">
                     <label class="attendance-label">Сможете ли вы быть на мероприятии?</label>
                     <div class="toggle-group">
-                        <input type="radio" id="yes" name="attending" value="Да" required>
-                        <label for="yes" class="toggle-option">
-                            <span class="toggle-text">Да</span>
+                        <label class="toggle-option">
+                            <input type="radio" name="attending" value="Да" required>
+                            <span class="toggle-text">Да, обязательно буду</span>
                         </label>
                         
-                        <input type="radio" id="no" name="attending" value="Нет">
-                        <label for="no" class="toggle-option">
-                            <span class="toggle-text">Нет</span>
+                        <label class="toggle-option">
+                            <input type="radio" name="attending" value="Нет">
+                            <span class="toggle-text">К сожалению, не смогу</span>
                         </label>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="quality">Как вы думаете, какое ваше качество больше всего ценит именинница? (Пожалуйста, не делитесь ответом на этот вопрос с именинницей)</label>
-                    <textarea id="quality" name="valued_quality" rows="4"></textarea>
+                    <label for="quality">Как вы думаете, какое ваше качество больше всего ценит именинница?</label>
+                    <textarea id="quality" name="valued_quality" rows="4" placeholder="Пожалуйста, не делитесь ответом на этот вопрос с именинницей"></textarea>
                 </div>
                 
                 <input type="hidden" name="_subject" value="Новый ответ на приглашение!">
                 <input type="text" name="_gotcha" style="display:none">
                 
-                <button type="submit" class="submit-btn">Отправить ответ</button>
+                <button type="submit" class="submit-btn">
+                    <span>Отправить ответ</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </form>
         </div>
     </section>
@@ -235,96 +241,61 @@
     <footer class="footer">
         <div class="container">
             <p>С нетерпением жду Вас на этом волшебном вечере!</p>
-            <p class="signature">Татьяна</p>
-            <div class="social-links">
-                <p>По вопросам и предложениям обращаться к организаторам: +7 977 269-13-38</p>
+            <div class="signature">Татьяна</div>
+            <div class="contact-info">
+                <p>По вопросам обращаться к организаторам:</p>
+                <p><i class="fas fa-phone"></i> +7 977 269-13-38</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Создание блесток
-        function createGlitter() {
-            const glitterContainer = document.body;
-            const glitterCount = 200;
-            
-            for (let i = 0; i < glitterCount; i++) {
-                const glitter = document.createElement('div');
-                glitter.className = 'glitter-particle';
-                glitter.style.left = Math.random() * 100 + 'vw';
-                glitter.style.animationDelay = Math.random() * 15 + 's';
-                glitter.style.animationDuration = (3 + Math.random() * 7) + 's';
-                glitter.style.width = (2 + Math.random() * 6) + 'px';
-                glitter.style.height = glitter.style.width;
-                
-                // Разные цвета блесток
-                const colors = ['#D4AF37', '#C0C0C0', '#0D5C3E', '#FFFFFF', '#B8860B'];
-                const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                glitter.style.background = randomColor;
-                
-                // Разные формы
-                if (Math.random() > 0.5) {
-                    glitter.style.borderRadius = '0';
-                    glitter.style.transform = 'rotate(45deg)';
-                }
-                
-                glitterContainer.appendChild(glitter);
-            }
-        }
-        
         // Плавная прокрутка
         document.querySelector('.scroll-indicator').addEventListener('click', function() {
             document.querySelector('#details').scrollIntoView({
                 behavior: 'smooth'
             });
         });
-        
-        // Toggle для формы
-        document.querySelectorAll('.toggle-option').forEach(option => {
-            option.addEventListener('click', function() {
+
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Наблюдаем за карточками и секциями
+        document.querySelectorAll('.detail-card, .timeline-item, .dress-example, .form-group').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Обработка формы
+        document.querySelectorAll('.toggle-option input').forEach(radio => {
+            radio.addEventListener('change', function() {
                 document.querySelectorAll('.toggle-option').forEach(opt => {
                     opt.classList.remove('active');
                 });
-                this.classList.add('active');
+                this.parentElement.classList.add('active');
             });
         });
-        
-        // Модальное окно для изображений
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        const closeModal = document.querySelector(".close-modal");
-        
-        // Открытие модального окна при клике на изображение
-        document.querySelectorAll('.dress-example-image').forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-            });
-        });
-        
-        // Закрытие модального окна
-        closeModal.addEventListener('click', function() {
-            modal.style.display = "none";
-        });
-        
-        // Закрытие при клике вне изображения
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-        
-        // Закрытие по ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.style.display === "block") {
-                modal.style.display = "none";
-            }
-        });
-        
-        // Запуск при загрузке
+
+        // Плавное появление при загрузке
         document.addEventListener('DOMContentLoaded', function() {
-            createGlitter();
+            setTimeout(() => {
+                document.querySelector('.hero-content').style.opacity = '1';
+                document.querySelector('.hero-content').style.transform = 'translateY(0)';
+            }, 300);
         });
     </script>
 </body>
