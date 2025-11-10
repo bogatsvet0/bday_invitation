@@ -38,7 +38,7 @@ body {
 .hero {
     background: 
         linear-gradient(var(--transparent-dark), var(--transparent-dark)),
-        url('background.jpg') center/cover;
+        url('party-background.jpg') center/cover;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -371,74 +371,365 @@ section {
     font-size: 0.95rem;
 }
 
-/* Дресс-код */
+/* Дресс-код с двумя вертикальными фото */
 .dresscode {
     background: var(--black);
+    padding: 5rem 0;
 }
 
 .dresscode-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .dresscode-intro {
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
     color: var(--light-gold);
     line-height: 1.7;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.dress-examples {
+/* Компактный вариант с двумя фото */
+.dress-examples-compact {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
 
-.dress-example {
+.dress-example-vertical {
+    display: flex;
+    flex-direction: column;
     background: var(--dark-gray);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
     border: 1px solid var(--medium-gray);
     transition: all 0.3s ease;
 }
 
-.dress-example:hover {
-    border-color: var(--gold);
+.dress-example-vertical:hover {
     transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(201, 169, 110, 0.15);
 }
 
-.dress-icon {
+.dress-image-vertical {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    flex-shrink: 0;
+}
+
+.dress-img-vertical {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dress-example-vertical:hover .dress-img-vertical {
+    transform: scale(1.03);
+}
+
+.image-overlay-vertical {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dress-example-vertical:hover .image-overlay-vertical {
+    opacity: 1;
+}
+
+.image-overlay-vertical i {
+    color: var(--white);
     font-size: 2.5rem;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
 }
 
-.dress-example h4 {
-    color: var(--cream);
+.dress-example-vertical:hover .image-overlay-vertical i {
+    transform: scale(1);
+}
+
+.dress-info-vertical {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dress-category-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gold);
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+
+.dress-category-title i {
     font-size: 1.3rem;
 }
 
-.dress-example ul {
-    list-style: none;
-    text-align: left;
+.dress-features {
+    flex: 1;
 }
 
-.dress-example li {
-    color: var(--light-gold);
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
 }
 
-.dress-example li::before {
-    content: '•';
+.feature-item i {
     color: var(--gold);
-    position: absolute;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.feature-item span {
+    color: var(--light-gold);
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* Общие рекомендации */
+.dress-guidelines {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--medium-gray);
+}
+
+.guideline-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--dark-gray);
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+    transition: all 0.3s ease;
+}
+
+.guideline-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.guideline-icon {
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+}
+
+.guideline-card h4 {
+    color: var(--cream);
+    margin-bottom: 1rem;
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+}
+
+.guideline-card p {
+    color: var(--light-gold);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Модальное окно для вертикальных фото */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--dark-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: var(--white);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.close-modal:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#modalImage {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+}
+
+.image-caption {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.image-caption h3 {
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+}
+
+.image-caption p {
+    color: var(--light-gold);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Адаптивность для двух фото */
+@media (max-width: 768px) {
+    .dress-examples-compact {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .dress-image-vertical {
+        height: 300px;
+    }
+    
+    .dress-info-vertical {
+        padding: 1.5rem;
+    }
+    
+    .dress-category-title {
+        font-size: 1.3rem;
+    }
+    
+    .dress-guidelines {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .guideline-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dress-examples-compact {
+        gap: 1.5rem;
+    }
+    
+    .dress-image-vertical {
+        height: 250px;
+    }
+    
+    .dress-info-vertical {
+        padding: 1rem;
+    }
+    
+    .feature-item {
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .feature-item span {
+        font-size: 0.9rem;
+    }
+    
+    .dress-guidelines {
+        gap: 1rem;
+    }
+    
+    .modal-content {
+        max-width: 350px;
+    }
+    
+    .image-caption {
+        padding: 1rem;
+    }
+}
+
+/* Для очень высоких вертикальных фото */
+@media (min-width: 769px) {
+    .dress-example-vertical {
+        flex-direction: row;
+        height: 400px;
+    }
+    
+    .dress-image-vertical {
+        width: 50%;
+        height: 100%;
+    }
+    
+    .dress-info-vertical {
+        width: 50%;
+        padding: 2rem;
+    }
+    
+    .modal-content {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .dress-example-vertical {
+        height: 450px;
+    }
+    
+    .dress-info-vertical {
+        padding: 2.5rem;
+    }
 }
 
 /* Место проведения */

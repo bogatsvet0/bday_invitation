@@ -130,45 +130,127 @@
         </div>
     </section>
 
-    <!-- Дресс-код -->
-    <section id="dresscode" class="dresscode">
-        <div class="container">
-            <h2 class="section-title">Дресс-код</h2>
-            
-            <div class="dresscode-content">
-                <div class="dresscode-intro">
-                    <p>Создайте образ, достойный вечеринки Гэтсби! Блеск, элегантность и роскошь 20-х годов.</p>
-                </div>
-                
-                <div class="dress-examples">
-                    <div class="dress-example">
-                        <div class="dress-icon">
-                            <i class="fas fa-female"></i>
-                        </div>
-                        <h4>Для нее</h4>
-                        <ul>
-                            <li>Платья с бахромой</li>
-                            <li>Жемчужные нити</li>
-                            <li>Перья и диадемы</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="dress-example">
-                        <div class="dress-icon">
-                            <i class="fas fa-male"></i>
-                        </div>
-                        <h4>Для него</h4>
-                        <ul>
-                            <li>Костюмы-тройки</li>
-                            <li>Бабочки</li>
-                            <li>Шляпы-котелки</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<!-- Дресс-код с двумя фото референсами -->
+	<section id="dresscode" class="dresscode">
+		<div class="container">
+			<h2 class="section-title">Дресс-код</h2>
+			
+			<div class="dresscode-content">
+				<div class="dresscode-intro">
+					<p>Создайте образ, достойный вечеринки Гэтсби! Блеск, элегантность и роскошь 20-х годов. Дресс-код необязателен, но я буду очень признательна, если гости поддержат наш стиль.</p>
+				</div>
+				
+				<div class="dress-examples-compact">
+					<!-- Женский наряд -->
+					<div class="dress-example-vertical">
+						<div class="dress-image-vertical">
+							<img src="dress-example1.jpg" alt="Пример наряда для женщин в стиле Гэтсби" class="dress-img-vertical">
+							<div class="image-overlay-vertical">
+								<i class="fas fa-search-plus"></i>
+							</div>
+						</div>
+						<div class="dress-info-vertical">
+							<h3 class="dress-category-title">
+								<i class="fas fa-female"></i>
+								Для нее
+							</h3>
+							<div class="dress-features">
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Платья с бахромой и пайетками</span>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Жемчужные нити и длинные бусы</span>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Перья в волосах и аксессуарах</span>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Элегантные перчатки до локтя</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Мужской наряд -->
+					<div class="dress-example-vertical">
+						<div class="dress-image-vertical">
+							<img src="dress-example2.jpg" alt="Пример наряда для мужчин в стиле Гэтсби" class="dress-img-vertical">
+							<div class="image-overlay-vertical">
+								<i class="fas fa-search-plus"></i>
+							</div>
+						</div>
+						<div class="dress-info-vertical">
+							<h3 class="dress-category-title">
+								<i class="fas fa-male"></i>
+								Для него
+							</h3>
+							<div class="dress-features">
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Костюмы-тройки классического покроя</span>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Бабочки вместо галстуков</span>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Шляпы-котелки и фетровые шляпы</span>
+								</div>
+								<div class="feature-item">
+									<i class="fas fa-check"></i>
+									<span>Стильные запонки и зажимы для галстука</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Общие рекомендации -->
+				<div class="dress-guidelines">
+					<div class="guideline-card">
+						<div class="guideline-icon">
+							<i class="fas fa-palette"></i>
+						</div>
+						<h4>Цветовая палитра</h4>
+						<p>Золотые, черные, серебряные, глубокие бордовые, изумрудные и сапфировые оттенки</p>
+					</div>
+					
+					<div class="guideline-card">
+						<div class="guideline-icon">
+							<i class="fas fa-gem"></i>
+						</div>
+						<h4>Аксессуары</h4>
+						<p>Жемчуг, перья, диадемы, длинные перчатки, бабочки, трости, портсигары</p>
+					</div>
+					
+					<div class="guideline-card">
+						<div class="guideline-icon">
+							<i class="fas fa-star"></i>
+						</div>
+						<h4>Общий стиль</h4>
+						<p>Роскошь, блеск, элегантность и легкая театральность эпохи джаза</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
+	<!-- Модальное окно для просмотра фото -->
+	<div id="imageModal" class="modal">
+		<div class="modal-content">
+			<span class="close-modal">&times;</span>
+			<img id="modalImage" src="" alt="Увеличенное изображение наряда">
+			<div class="image-caption">
+				<h3 id="modalTitle"></h3>
+				<p id="modalDescription"></p>
+			</div>
+		</div>
+	</div>
     <!-- Лофт -->
     <section id="venue" class="venue">
         <div class="container">
@@ -177,7 +259,9 @@
             <div class="venue-content">
                 <div class="venue-info">
                     <h3>Лофт "Пенка"</h3>
-                    <p>Идеальное место для вечера в стиле Гэтсби с атмосферой роскоши и уюта.</p>
+                    <p>Идеальное место для вечера в стиле Гэтсби с атмосферой роскоши и уюта. </p>
+                    <p>Просьба взять с собой сменную обувь, так наши вечерние наряды останутся изысканными,а пол на мероприятии чистым.</p>
+                    <p>Рядом с площадкой есть дворовая парковка. Однако мест на ней может не оказаться. Если есть возможность, то следует отдать предпочтение такси. В случае затруднений или вопросов свяжитесь с организаторами.</p>
                     <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="venue-link">
                         <i class="fas fa-map-marker-alt"></i>
                         Посмотреть на карте
@@ -297,6 +381,80 @@
                 document.querySelector('.hero-content').style.transform = 'translateY(0)';
             }, 300);
         });
+		
+		// Модальное окно для фото референсов
+		const modal = document.getElementById("imageModal");
+		const modalImg = document.getElementById("modalImage");
+		const modalTitle = document.getElementById("modalTitle");
+		const modalDescription = document.getElementById("modalDescription");
+		const closeModal = document.querySelector(".close-modal");
+
+		// Данные для модального окна
+		const dressData = {
+			'dress-example1.jpg': {
+				title: 'Женские наряды в стиле Гэтсби',
+				description: 'Элегантные платья с бахромой, жемчужные аксессуары и роскошные детали эпохи джаза'
+			},
+			'dress-example2.jpg': {
+				title: 'Мужские наряды в стиле Гэтсби', 
+				description: 'Классические костюмы-тройки, бабочки и стильные аксессуары 20-х годов'
+			}
+		};
+
+		// Открытие модального окна при клике на изображение
+		document.querySelectorAll('.dress-image-vertical').forEach((imageContainer, index) => {
+			imageContainer.addEventListener('click', function() {
+				const img = this.querySelector('.dress-img-vertical');
+				const fileName = img.src.split('/').pop();
+				const data = dressData[fileName];
+				
+				modal.style.display = "block";
+				modalImg.src = img.src;
+				modalImg.alt = img.alt;
+				modalTitle.textContent = data.title;
+				modalDescription.textContent = data.description;
+				
+				// Блокируем прокрутку body
+				document.body.style.overflow = 'hidden';
+			});
+		});
+
+		// Закрытие модального окна
+		closeModal.addEventListener('click', function() {
+			modal.style.display = "none";
+			document.body.style.overflow = 'auto';
+		});
+
+		// Закрытие при клике вне изображения
+		modal.addEventListener('click', function(e) {
+			if (e.target === modal) {
+				modal.style.display = "none";
+				document.body.style.overflow = 'auto';
+			}
+		});
+
+		// Закрытие по ESC
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape' && modal.style.display === "block") {
+				modal.style.display = "none";
+				document.body.style.overflow = 'auto';
+			}
+		});
+
+		// Предзагрузка изображений для плавного отображения
+		function preloadImages() {
+			const imageUrls = ['dress-example1.jpg', 'dress-example2.jpg'];
+			
+			imageUrls.forEach(url => {
+				const img = new Image();
+				img.src = url;
+			});
+		}
+
+		// Запускаем предзагрузку при загрузке страницы
+		document.addEventListener('DOMContentLoaded', function() {
+			preloadImages();
+		});
     </script>
 </body>
 </html>
