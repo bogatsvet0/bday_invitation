@@ -141,12 +141,17 @@ body {
     text-transform: uppercase;
 }
 
+/* Новый шрифт для имени Татьяна - аналогичный картинке */
 .main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 6rem;
+    font-family: 'Marck Script', cursive;
+    font-size: 5.5rem;
     color: var(--gold);
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.6);
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 .divider {
@@ -171,12 +176,17 @@ body {
     transform: rotate(45deg);
 }
 
+/* Увеличенные и яркие подзаголовки */
 .subtitle {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--silver);
+    color: var(--gold);
+    text-shadow: 
+        0 0 15px var(--gold),
+        0 0 30px rgba(212, 175, 55, 0.7);
+    font-weight: 600;
 }
 
 .date, .time {
@@ -187,21 +197,27 @@ body {
 }
 
 .theme {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     margin-top: 2rem;
     font-style: italic;
-    color: var(--silver);
-    letter-spacing: 2px;
+    color: var(--gold);
+    letter-spacing: 3px;
     text-transform: uppercase;
+    text-shadow: 
+        0 0 15px var(--gold),
+        0 0 30px rgba(212, 175, 55, 0.7);
+    font-weight: 600;
 }
 
-/* Декоративные элементы */
+/* Декоративные элементы - исправлено отображение бокала */
 .decoration {
     position: absolute;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: var(--gold);
-    opacity: 0.6;
+    opacity: 0.7;
     animation: float 3s ease-in-out infinite;
+    z-index: 5;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 @keyframes float {
@@ -211,8 +227,15 @@ body {
 
 .left-top { top: 15%; left: 5%; animation-delay: 0s; }
 .right-top { top: 15%; right: 5%; animation-delay: 0.5s; }
-.left-bottom { bottom: 20%; left: 5%; animation-delay: 1s; color: var(--silver); }
-.right-bottom { bottom: 20%; right: 5%; animation-delay: 1.5s; color: var(--silver); }
+.left-bottom { bottom: 15%; left: 5%; animation-delay: 1s; }
+.right-bottom { bottom: 15%; right: 5%; animation-delay: 1.5s; }
+
+/* Увеличим иконку бокала */
+.right-bottom i {
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 15px var(--gold);
+}
 
 .scroll-indicator {
     position: absolute;
@@ -827,6 +850,10 @@ input::placeholder, textarea::placeholder {
         font-size: 1.5rem;
     }
     
+    .subtitle, .theme {
+        font-size: 1.8rem;
+    }
+    
     .details-grid {
         grid-template-columns: 1fr;
     }
@@ -930,7 +957,11 @@ input::placeholder, textarea::placeholder {
         font-size: 3rem;
     }
     
-    .subtitle, .date, .time, .theme {
+    .subtitle, .theme {
+        font-size: 1.4rem;
+    }
+    
+    .date, .time {
         font-size: 1.2rem;
     }
     
