@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Татьяна | 50 лет в стиле Гэтсби</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -96,23 +96,31 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-time">16:00</div>
-                        <div class="timeline-event">Фуршет</div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">16:00</div>
+                            <div class="timeline-event">Фуршет</div>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-time">17:00</div>
-                        <div class="timeline-event">Поздравления и конкурсы в честь именинницы</div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">17:00</div>
+                            <div class="timeline-event">Поздравления и конкурсы</div>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-time">18:00</div>
-                        <div class="timeline-event">Праздничный ужин</div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">18:00</div>
+                            <div class="timeline-event">Праздничный ужин</div>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-time">19:00</div>
-                        <div class="timeline-event">Продолжение веселья</div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00</div>
+                            <div class="timeline-event">Продолжение веселья</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,7 +149,7 @@
             <div class="dresscode-compact">
                 <div class="dress-image left-image">
                     <div class="image-placeholder">
-                        <img src="dress-example1.jpg" class="dress-example-image">
+                        <div class="dress-example-image female"></div>
                         <p>Для нее</p>
                     </div>
                 </div>
@@ -170,7 +178,7 @@
                 
                 <div class="dress-image right-image">
                     <div class="image-placeholder">
-                        <img src="dress-example2.jpg" class="dress-example-image">
+                        <div class="dress-example-image male"></div>
                         <p>Для него</p>
                     </div>
                 </div>
@@ -191,13 +199,17 @@
                 </div>
                 
                 <div class="form-group">
-                    <label>Сможете ли вы быть на мероприятии?</label>
-                    <div class="radio-group">
+                    <label class="attendance-label">Сможете ли вы быть на мероприятии?</label>
+                    <div class="toggle-group">
                         <input type="radio" id="yes" name="attending" value="Да" required>
-                        <label for="yes" class="radio-label">Да</label>
+                        <label for="yes" class="toggle-option">
+                            <span class="toggle-text">Да</span>
+                        </label>
                         
                         <input type="radio" id="no" name="attending" value="Нет">
-                        <label for="no" class="radio-label">Нет</label>
+                        <label for="no" class="toggle-option">
+                            <span class="toggle-text">Нет</span>
+                        </label>
                     </div>
                 </div>
                 
@@ -229,23 +241,24 @@
         // Создание блесток
         function createGlitter() {
             const glitterContainer = document.body;
-            const glitterCount = 200; // Увеличил количество блесток
+            const glitterCount = 200;
             
             for (let i = 0; i < glitterCount; i++) {
                 const glitter = document.createElement('div');
                 glitter.className = 'glitter-particle';
                 glitter.style.left = Math.random() * 100 + 'vw';
-                glitter.style.animationDelay = Math.random() * 10 + 's';
-                glitter.style.animationDuration = (2 + Math.random() * 5) + 's';
-                glitter.style.width = (2 + Math.random() * 8) + 'px';
+                glitter.style.animationDelay = Math.random() * 15 + 's';
+                glitter.style.animationDuration = (3 + Math.random() * 7) + 's';
+                glitter.style.width = (2 + Math.random() * 6) + 'px';
                 glitter.style.height = glitter.style.width;
                 
                 // Разные цвета блесток
-                const colors = ['#D4AF37', '#C0C0C0', '#0D5C3E', '#FFFFFF'];
+                const colors = ['#D4AF37', '#C0C0C0', '#0D5C3E', '#FFFFFF', '#B8860B'];
                 const randomColor = colors[Math.floor(Math.random() * colors.length)];
                 glitter.style.background = randomColor;
                 
-                if (Math.random() > 0.7) {
+                // Разные формы
+                if (Math.random() > 0.5) {
                     glitter.style.borderRadius = '0';
                     glitter.style.transform = 'rotate(45deg)';
                 }
@@ -258,6 +271,16 @@
         document.querySelector('.scroll-indicator').addEventListener('click', function() {
             document.querySelector('#details').scrollIntoView({
                 behavior: 'smooth'
+            });
+        });
+        
+        // Toggle для формы
+        document.querySelectorAll('.toggle-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.toggle-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
             });
         });
         
