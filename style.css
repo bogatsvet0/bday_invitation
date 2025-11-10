@@ -141,12 +141,17 @@ body {
     text-transform: uppercase;
 }
 
+/* Новый шрифт для имени Татьяна - аналогичный картинке */
 .main-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 6rem;
+    font-family: 'Playfair Display', cursive;
+    font-size: 5.5rem;
     color: var(--gold);
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.6);
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 .divider {
@@ -379,10 +384,9 @@ section {
     font-family: 'Great Vibes', cursive;
 }
 
-/* Увеличиваем шрифт обычного текста */
 .message-content p {
     margin-bottom: 1.5rem;
-    font-size: 1.3rem; /* Увеличен с 1.1rem */
+    font-size: 1.1rem;
     line-height: 1.7;
 }
 
@@ -539,7 +543,7 @@ section {
     font-style: italic;
 }
 
-/* Компактный дресс-код - уменьшены отступы */
+/* Компактный дресс-код */
 .dresscode {
     background: linear-gradient(135deg, rgba(13, 92, 62, 0.9) 0%, rgba(10, 10, 10, 0.9) 100%);
 }
@@ -553,14 +557,14 @@ section {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     border: 1px solid var(--silver);
-    padding: 1.5rem; /* Уменьшено с 2.5rem */
+    padding: 2.5rem;
     backdrop-filter: blur(10px);
-    gap: 1.5rem; /* Уменьшено с 2rem */
+    gap: 2rem;
 }
 
 .dress-image {
-    flex: 0 0 180px; /* Немного уменьшено */
-    height: 250px; /* Немного уменьшено */
+    flex: 0 0 200px;
+    height: 280px;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -618,7 +622,7 @@ section {
 .dresscode-info-compact {
     flex: 1;
     text-align: center;
-    padding: 0 1rem; /* Уменьшено с 1.5rem */
+    padding: 0 1.5rem;
 }
 
 .dresscode-info-compact h3 {
@@ -660,13 +664,13 @@ section {
     text-align: left;
     flex: 1;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; /* Увеличен шрифт */
+    font-size: 1.1rem;
 }
 
 .dresscode-request {
     background: transparent;
-    padding: 1rem 0; /* Уменьшено с 1.5rem */
-    margin: 1.5rem 0; /* Уменьшено с 2rem */
+    padding: 1.5rem 0;
+    margin: 2rem 0;
 }
 
 .dresscode-request p {
@@ -674,13 +678,13 @@ section {
     line-height: 1.7;
     color: var(--silver);
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; /* Увеличен шрифт */
+    font-size: 1.1rem;
 }
 
 .dress-inspiration {
     font-style: italic;
     color: var(--gold);
-    font-size: 1.3rem; /* Увеличен шрифт */
+    font-size: 1.2rem;
     margin-top: 1rem;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
@@ -694,7 +698,7 @@ section {
 .rsvp-subtitle {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 1.2rem; /* Увеличен шрифт */
+    font-size: 1.1rem;
     opacity: 0.9;
     color: var(--silver);
 }
@@ -713,13 +717,12 @@ section {
     margin-bottom: 2.5rem;
 }
 
-/* Увеличиваем шрифт в форме */
 label {
     display: block;
     margin-bottom: 0.8rem;
     color: var(--silver);
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; /* Увеличен с 1.1rem */
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
@@ -735,7 +738,7 @@ input, textarea {
     border-radius: 8px;
     color: var(--cream);
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; /* Увеличен с 1rem */
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -748,7 +751,6 @@ input:focus, textarea:focus {
 
 input::placeholder, textarea::placeholder {
     color: rgba(245, 245, 220, 0.6);
-    font-size: 1.1rem; /* Увеличен шрифт плейсхолдера */
 }
 
 /* Красивый переключатель Да/Нет */
@@ -772,7 +774,7 @@ input::placeholder, textarea::placeholder {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; /* Увеличен шрифт */
+    font-size: 1.1rem;
     color: var(--silver);
 }
 
@@ -799,7 +801,7 @@ input::placeholder, textarea::placeholder {
     color: var(--black);
     border: none;
     padding: 1.3rem 2rem;
-    font-size: 1.3rem; /* Увеличен шрифт */
+    font-size: 1.2rem;
     font-weight: 600;
     border-radius: 30px;
     cursor: pointer;
@@ -819,10 +821,6 @@ input::placeholder, textarea::placeholder {
     text-align: center;
     padding: 3rem 0;
     border-top: 1px solid var(--gold);
-}
-
-.footer p {
-    font-size: 1.2rem; /* Увеличен шрифт */
 }
 
 .signature {
@@ -860,32 +858,18 @@ input::placeholder, textarea::placeholder {
         grid-template-columns: 1fr;
     }
     
-    /* Горизонтальный дресс-код для мобильной версии */
     .dresscode-compact {
-        flex-direction: row; /* Оставляем горизонтальное расположение */
+        flex-direction: column;
         padding: 1.5rem;
-        gap: 1rem;
+        gap: 1.5rem;
     }
     
     .dress-image {
-        flex: 0 0 120px; /* Уменьшаем размер картинок для мобильных */
-        height: 180px;
-    }
-    
-    .dresscode-info-compact {
-        padding: 0 0.5rem;
-    }
-    
-    .dresscode-info-compact h3 {
-        font-size: 1.6rem;
-    }
-    
-    .dresscode-request p {
-        font-size: 1.1rem;
-    }
-    
-    .feature-compact span {
-        font-size: 1rem;
+        flex: 0 0 200px;
+        height: 200px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
     
     .venue-image {
@@ -914,10 +898,6 @@ input::placeholder, textarea::placeholder {
     
     .message-content {
         padding: 2rem 1.5rem;
-    }
-    
-    .message-content p {
-        font-size: 1.2rem; /* Адаптивный размер для мобильных */
     }
     
     .feature-compact {
@@ -990,21 +970,6 @@ input::placeholder, textarea::placeholder {
     }
     
     .dresscode-info-compact h3 {
-        font-size: 1.4rem;
-    }
-    
-    /* Для очень маленьких экранов возвращаем вертикальное расположение дресс-кода */
-    @media (max-width: 400px) {
-        .dresscode-compact {
-            flex-direction: column;
-        }
-        
-        .dress-image {
-            flex: 0 0 150px;
-            height: 200px;
-            width: 100%;
-            max-width: 250px;
-            margin: 0 auto;
-        }
+        font-size: 1.6rem;
     }
 }

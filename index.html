@@ -14,6 +14,12 @@
     <div class="glitter"></div>
     <div class="glitter"></div>
     
+    <!-- Модальное окно для изображений -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
     <!-- Главный экран -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -66,7 +72,7 @@
                     <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                     <h3>Место</h3>
                     <p>Лофт "Пенка"</p>
-                    <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="map-link">
+                    <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="venue-link">
                         <i class="fas fa-map"></i> Посмотреть на карте
                     </a>
                 </div>
@@ -83,7 +89,7 @@
                 <div class="message-content">
                     <i class="fas fa-heart message-icon"></i>
                     <h3>Дорогой гость!</h3>
-                    <p>Я буду безмерно рада видеть именно Вас на своем празднике! Этот вечер я хочу провести в кругу самых родных и близких людей, разделив с вами радость этого особенного дня.</p>
+                    <p>Я буду безмерно рада видеть именно тебя на своем празднике! Этот вечер я хочу провести в кругу самых родных и близких людей, разделив с вами радость этого особенного дня.</p>
                     <p>Давайте вместе создадим атмосферу настоящего праздника - теплого, душевного и незабываемого! Жду вас с прекрасным настроением и готовностью веселиться от души!</p>
                     <div class="signature-small">С любовью, Ваша Татьяна</div>
                 </div>
@@ -146,13 +152,6 @@
             <h2 class="section-title">Дресс-код</h2>
             
             <div class="dresscode-compact">
-                <div class="dress-image left-image">
-                    <div class="image-placeholder">
-                        <div class="dress-example-image female"></div>
-                        <p>Для нее</p>
-                    </div>
-                </div>
-                
                 <div class="dresscode-info-compact">
                     <div class="dresscode-request">
                         <p>Организаторы постарались сделать вечеринку в стиле золотых двадцатых. Дресс-код необязателен, но я буду очень признательна, если гости поддержат наш стиль и выберут одежду и аксессуары, приближенные к тематике. Так у нас будут самые красивые фотографии и настрой на веселье!</p>
@@ -174,10 +173,18 @@
                     <p class="dress-inspiration">Создайте образ, достойный вечеринки Гэтсби!</p>
                 </div>
                 
-                <div class="dress-image right-image">
-                    <div class="image-placeholder">
-                        <div class="dress-example-image male"></div>
-                        <p>Для него</p>
+                <div class="dress-images-container">
+                    <div class="dress-image">
+                        <div class="image-placeholder">
+                            <img src="dress-example1.jpg" alt="Пример для женщин" class="dress-example-image">
+                            <p>Для нее</p>
+                        </div>
+                    </div>
+                    <div class="dress-image">
+                        <div class="image-placeholder">
+                            <img src="dress-example2.jpg" alt="Пример для мужчин" class="dress-example-image">
+                            <p>Для него</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -230,7 +237,7 @@
             <p>С нетерпением жду Вас на этом волшебном вечере!</p>
             <p class="signature">Татьяна</p>
             <div class="social-links">
-                <p>По вопросам и предложениям позздравлений обращаться к организаторам: +7 977 269-13-38</p>
+                <p>По вопросам и предложениям обращаться к организаторам: +7 977 269-13-38</p>
             </div>
         </div>
     </footer>
@@ -280,6 +287,39 @@
                 });
                 this.classList.add('active');
             });
+        });
+        
+        // Модальное окно для изображений
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeModal = document.querySelector(".close-modal");
+        
+        // Открытие модального окна при клике на изображение
+        document.querySelectorAll('.dress-example-image').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+            });
+        });
+        
+        // Закрытие модального окна
+        closeModal.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+        
+        // Закрытие при клике вне изображения
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+        
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === "block") {
+                modal.style.display = "none";
+            }
         });
         
         // Запуск при загрузке
