@@ -13,14 +13,17 @@
     --cream: #F5F5DC;
     --charcoal: #2F2F2F;
     --transparent-gold: rgba(212, 175, 55, 0.1);
+    --burgundy: #800020;
     --dark-red: #8B0000;
+    --ruby: #B22222;
+    --rose-gold: #B76E79;
 }
 
 body {
     font-family: 'Cinzel', serif;
     line-height: 1.6;
     color: var(--cream);
-    background: linear-gradient(135deg, #0c0c0c 0%, #2d1b07 100%);
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a0f0f 50%, #2d1b07 100%);
     overflow-x: hidden;
     position: relative;
 }
@@ -63,7 +66,7 @@ body {
 /* Главный экран */
 .hero {
     background: 
-        linear-gradient(rgba(20, 20, 20, 0.7), rgba(40, 20, 0, 0.8)),
+        linear-gradient(rgba(26, 15, 15, 0.8), rgba(40, 20, 0, 0.9)),
         url('party-background.jpg') center/cover;
     height: 100vh;
     display: flex;
@@ -83,8 +86,8 @@ body {
     bottom: 0;
     background: 
         radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 80% 20%, rgba(178, 34, 34, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 0, 0, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -158,13 +161,13 @@ body {
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.diamond {
-    width: 10px;
-    height: 10px;
-    background: var(--gold);
-    transform: rotate(45deg);
+.crystal {
+    width: 8px;
+    height: 8px;
+    background: var(--ruby);
     margin: 0 1.5rem;
-    box-shadow: 0 0 10px var(--gold);
+    box-shadow: 0 0 10px var(--ruby);
+    transform: rotate(45deg);
 }
 
 .subtitle {
@@ -182,15 +185,12 @@ body {
 }
 
 .theme {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
     font-style: italic;
     color: var(--cream);
-    border: 1px solid var(--gold);
-    padding: 0.8rem 1.5rem;
-    display: inline-block;
-    border-radius: 25px;
-    background: rgba(212, 175, 55, 0.1);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* Декоративные элементы */
@@ -209,8 +209,8 @@ body {
 
 .left-top { top: 10%; left: 5%; animation-delay: 0s; }
 .right-top { top: 10%; right: 5%; animation-delay: 0.5s; }
-.left-bottom { bottom: 10%; left: 5%; animation-delay: 1s; }
-.right-bottom { bottom: 10%; right: 5%; animation-delay: 1.5s; }
+.left-bottom { bottom: 10%; left: 5%; animation-delay: 1s; color: var(--ruby); }
+.right-bottom { bottom: 10%; right: 5%; animation-delay: 1.5s; color: var(--ruby); }
 
 .scroll-indicator {
     position: absolute;
@@ -257,7 +257,7 @@ section {
 
 /* Детали события */
 .details {
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(26, 15, 15, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
 }
 
 .details-grid {
@@ -337,19 +337,19 @@ section {
     background: rgba(255, 255, 255, 0.05);
     padding: 3rem;
     border-radius: 15px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--rose-gold);
     backdrop-filter: blur(10px);
     position: relative;
 }
 
 .message-icon {
-    color: var(--gold);
+    color: var(--ruby);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
 .message-content h3 {
-    color: var(--gold);
+    color: var(--rose-gold);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-family: 'Great Vibes', cursive;
@@ -363,16 +363,68 @@ section {
 
 .signature-small {
     font-family: 'Great Vibes', cursive;
-    color: var(--gold);
+    color: var(--rose-gold);
     font-size: 1.5rem;
     margin-top: 1.5rem;
     font-style: italic;
+}
+
+/* Расписание */
+.schedule {
+    margin: 3rem auto;
+    max-width: 700px;
+}
+
+.schedule-title {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-family: 'Great Vibes', cursive;
+}
+
+.schedule-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    background: rgba(128, 0, 32, 0.1);
+    padding: 1.2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--ruby);
+    transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+    background: rgba(128, 0, 32, 0.2);
+    transform: translateX(5px);
+}
+
+.schedule-time {
+    flex: 0 0 80px;
+    font-weight: bold;
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+.schedule-event {
+    flex: 1;
+    color: var(--cream);
+    font-size: 1.1rem;
 }
 
 /* Фото лофта */
 .venue-photo {
     margin-top: 3rem;
     text-align: center;
+}
+
+.venue-link {
+    text-decoration: none;
+    display: block;
 }
 
 .photo-container {
@@ -383,6 +435,14 @@ section {
     overflow: hidden;
     border: 2px solid var(--gold);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(178, 34, 34, 0.4);
+    border-color: var(--ruby);
 }
 
 .venue-image {
@@ -390,6 +450,11 @@ section {
     height: 400px;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-container:hover .venue-image {
+    transform: scale(1.05);
 }
 
 .photo-overlay {
@@ -397,7 +462,7 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     color: var(--cream);
     padding: 2rem;
     text-align: center;
@@ -409,9 +474,16 @@ section {
     font-size: 1.5rem;
 }
 
+.click-hint {
+    margin-top: 0.5rem;
+    color: var(--light-gold);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
 /* Компактный дресс-код */
 .dresscode {
-    background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(40, 20, 0, 0.9) 0%, rgba(26, 15, 15, 0.9) 100%);
 }
 
 .dresscode-compact {
@@ -422,7 +494,7 @@ section {
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--rose-gold);
     padding: 2rem;
     backdrop-filter: blur(10px);
     gap: 2rem;
@@ -434,15 +506,15 @@ section {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--rose-gold);
 }
 
 .left-image {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(139, 0, 0, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(178, 34, 34, 0.1) 100%);
 }
 
 .right-image {
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(212, 175, 55, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(178, 34, 34, 0.1) 0%, rgba(212, 175, 55, 0.2) 100%);
 }
 
 .image-placeholder {
@@ -451,7 +523,7 @@ section {
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: var(--gold);
+    color: var(--rose-gold);
     text-align: center;
 }
 
@@ -472,7 +544,7 @@ section {
 }
 
 .dresscode-info-compact h3 {
-    color: var(--gold);
+    color: var(--rose-gold);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     font-family: 'Great Vibes', cursive;
@@ -488,13 +560,13 @@ section {
     justify-content: center;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(183, 110, 121, 0.1);
     border-radius: 8px;
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid var(--rose-gold);
 }
 
 .feature-compact i {
-    color: var(--gold);
+    color: var(--rose-gold);
     margin-right: 1rem;
     font-size: 1.2rem;
     width: 20px;
@@ -505,16 +577,30 @@ section {
     flex: 1;
 }
 
+.dresscode-request {
+    background: rgba(128, 0, 32, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    border: 1px dashed var(--rose-gold);
+}
+
+.dresscode-request p {
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--light-gold);
+}
+
 .dress-inspiration {
     font-style: italic;
-    color: var(--gold);
+    color: var(--rose-gold);
     font-size: 1.1rem;
     margin-top: 1rem;
 }
 
 /* RSVP Форма */
 .rsvp {
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 20, 0, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(26, 15, 15, 0.9) 100%);
 }
 
 .rsvp-subtitle {
@@ -552,8 +638,8 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: var(--dark-gold);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    border-color: var(--ruby);
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.3);
     background: rgba(255, 255, 255, 0.15);
 }
 
@@ -563,7 +649,7 @@ input::placeholder, textarea::placeholder {
 
 .submit-btn {
     width: 100%;
-    background: linear-gradient(45deg, var(--gold), var(--dark-gold));
+    background: linear-gradient(45deg, var(--gold), var(--ruby));
     color: var(--black);
     border: none;
     padding: 1.2rem 2rem;
@@ -577,21 +663,21 @@ input::placeholder, textarea::placeholder {
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 25px rgba(178, 34, 34, 0.4);
 }
 
 /* Футер */
 .footer {
-    background: linear-gradient(135deg, var(--charcoal) 0%, #1a0f00 100%);
+    background: linear-gradient(135deg, var(--charcoal) 0%, #1a0f0f 100%);
     text-align: center;
     padding: 3rem 0;
-    border-top: 1px solid var(--gold);
+    border-top: 1px solid var(--ruby);
 }
 
 .signature {
     font-family: 'Great Vibes', cursive;
     font-size: 2.5rem;
-    color: var(--gold);
+    color: var(--rose-gold);
     margin: 1rem 0;
 }
 
@@ -665,6 +751,15 @@ input::placeholder, textarea::placeholder {
     
     .feature-compact i {
         margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .schedule-time {
         margin-bottom: 0.5rem;
     }
 }

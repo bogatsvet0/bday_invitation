@@ -26,7 +26,7 @@
             
             <div class="divider">
                 <div class="line"></div>
-                <div class="diamond"></div>
+                <div class="crystal"></div>
                 <div class="line"></div>
             </div>
             
@@ -67,7 +67,6 @@
                     <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                     <h3>Место</h3>
                     <p>Лофт "Пенка"</p>
-                    <p>Зал "Золотые двадцатые"</p>
                     <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="map-link">
                         <i class="fas fa-map"></i> Посмотреть на карте
                     </a>
@@ -90,16 +89,42 @@
                     <div class="signature-small">С любовью, Ваша Татьяна</div>
                 </div>
             </div>
+
+            <!-- Расписание -->
+            <div class="schedule">
+                <h3 class="schedule-title">Программа Вечера</h3>
+                <div class="schedule-grid">
+                    <div class="schedule-item">
+                        <div class="schedule-time">16:00</div>
+                        <div class="schedule-event">Фуршет</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">17:00</div>
+                        <div class="schedule-event">Поздравления и конкурсы в честь именинницы</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">18:00</div>
+                        <div class="schedule-event">Праздничный ужин</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">19:00</div>
+                        <div class="schedule-event">Продолжение веселья</div>
+                    </div>
+                </div>
+            </div>
             
             <!-- Фото лофта -->
             <div class="venue-photo">
-                <div class="photo-container">
-                    <img src="loft-penka.jpg" alt="Лофт Пенка" class="venue-image">
-                    <div class="photo-overlay">
-                        <h3>Лофт "Пенка"</h3>
-                        <p>Идеальное место для вечера в стиле Гэтсби</p>
+                <a href="https://yandex.ru/maps/-/CLCUBPPY" target="_blank" class="venue-link">
+                    <div class="photo-container">
+                        <img src="loft-penka.jpg" alt="Лофт Пенка" class="venue-image">
+                        <div class="photo-overlay">
+                            <h3>Лофт "Пенка"</h3>
+                            <p>Идеальное место для вечера в стиле Гэтсби</p>
+                            <div class="click-hint">Нажмите для просмотра на карте</div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -112,6 +137,7 @@
             <div class="dresscode-compact">
                 <div class="dress-image left-image">
                     <div class="image-placeholder">
+			<img src="dress-women.jpg" class="venue-image">
                         <i class="fas fa-female"></i>
                         <p>Для нее</p>
                     </div>
@@ -133,11 +159,15 @@
                             <span>Блестящие аксессуары и элегантность</span>
                         </div>
                     </div>
+                    <div class="dresscode-request">
+                        <p>Организаторы постарались сделать вечеринку в стиле золотых двадцатых. Я буду очень признательна, если гости поддержат наш стиль и выберут одежду и аксессуары, приближенные к тематике. Так у нас будут самые красивые фотографии и настрой на веселье!</p>
+                    </div>
                     <p class="dress-inspiration">Создайте образ, достойный вечеринки Гэтсби!</p>
                 </div>
                 
                 <div class="dress-image right-image">
                     <div class="image-placeholder">
+			<img src="dress-men.jpg" class="venue-image">
                         <i class="fas fa-male"></i>
                         <p>Для него</p>
                     </div>
@@ -150,7 +180,7 @@
     <section id="rsvp" class="rsvp">
         <div class="container">
             <h2 class="section-title">Подтвердите присутствие</h2>
-            <p class="rsvp-subtitle">Пожалуйста, ответьте до 1 декабря 2025 года</p>
+            <p class="rsvp-subtitle">Пожалуйста, ответьте до 10 декабря 2025 года</p>
             
             <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
                 <div class="form-group">
@@ -199,6 +229,11 @@
                 glitter.style.animationDuration = (2 + Math.random() * 4) + 's';
                 glitter.style.width = (2 + Math.random() * 6) + 'px';
                 glitter.style.height = glitter.style.width;
+                
+                // Добавляем красные блестки
+                if (Math.random() > 0.7) {
+                    glitter.style.background = '#B22222';
+                }
                 
                 if (Math.random() > 0.7) {
                     glitter.style.borderRadius = '0';
