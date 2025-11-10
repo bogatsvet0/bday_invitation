@@ -141,10 +141,11 @@ body {
     text-transform: uppercase;
 }
 
+/* Обновленный стиль для имени Татьяна */
 .main-title {
     font-family: 'Playfair Display', serif;
     font-size: 5rem;
-    color: transparent;
+    color: var(--gold);
     margin-bottom: 1rem;
     text-align: center;
     font-weight: 700;
@@ -153,8 +154,9 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    -webkit-text-stroke: 2px var(--gold);
-    text-stroke: 2px var(--gold);
+    text-shadow: 
+        2px 2px 0px var(--black),
+        4px 4px 0px rgba(212, 175, 55, 0.3);
     line-height: 1.2;
 }
 
