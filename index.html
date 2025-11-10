@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Татьяна | 50 лет в стиле Гэтсби</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cinzel:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -93,22 +93,26 @@
             <!-- Расписание -->
             <div class="schedule">
                 <h3 class="schedule-title">Программа Вечера</h3>
-                <div class="schedule-grid">
-                    <div class="schedule-item">
-                        <div class="schedule-time">16:00</div>
-                        <div class="schedule-event">Фуршет</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">16:00</div>
+                        <div class="timeline-event">Фуршет</div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">17:00</div>
-                        <div class="schedule-event">Поздравления и конкурсы в честь именинницы</div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">17:00</div>
+                        <div class="timeline-event">Поздравления и конкурсы в честь именинницы</div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">18:00</div>
-                        <div class="schedule-event">Праздничный ужин</div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">18:00</div>
+                        <div class="timeline-event">Праздничный ужин</div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="schedule-time">19:00</div>
-                        <div class="schedule-event">Продолжение веселья</div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">19:00</div>
+                        <div class="timeline-event">Продолжение веселья</div>
                     </div>
                 </div>
             </div>
@@ -137,14 +141,16 @@
             <div class="dresscode-compact">
                 <div class="dress-image left-image">
                     <div class="image-placeholder">
-			<img src="dress-women.jpg" class="venue-image">
-                        <i class="fas fa-female"></i>
+                        <img src="dress-example1.jpg" class="dress-example-image">
                         <p>Для нее</p>
                     </div>
                 </div>
                 
                 <div class="dresscode-info-compact">
-                    <h3>Золотые двадцатые</h3>
+                    <h3>Дресс-код мероприятия</h3>
+                    <div class="dresscode-request">
+                        <p>Организаторы постарались сделать вечеринку в стиле золотых двадцатых. Я буду очень признательна, если гости поддержат наш стиль и выберут одежду и аксессуары, приближенные к тематике. Так у нас будут самые красивые фотографии и настрой на веселье!</p>
+                    </div>
                     <div class="dress-features">
                         <div class="feature-compact">
                             <i class="fas fa-female"></i>
@@ -159,16 +165,12 @@
                             <span>Блестящие аксессуары и элегантность</span>
                         </div>
                     </div>
-                    <div class="dresscode-request">
-                        <p>Организаторы постарались сделать вечеринку в стиле золотых двадцатых. Я буду очень признательна, если гости поддержат наш стиль и выберут одежду и аксессуары, приближенные к тематике. Так у нас будут самые красивые фотографии и настрой на веселье!</p>
-                    </div>
                     <p class="dress-inspiration">Создайте образ, достойный вечеринки Гэтсби!</p>
                 </div>
                 
                 <div class="dress-image right-image">
                     <div class="image-placeholder">
-			<img src="dress-men.jpg" class="venue-image">
-                        <i class="fas fa-male"></i>
+                        <img src="dress-example2.jpg" class="dress-example-image">
                         <p>Для него</p>
                     </div>
                 </div>
@@ -182,24 +184,32 @@
             <h2 class="section-title">Подтвердите присутствие</h2>
             <p class="rsvp-subtitle">Пожалуйста, ответьте до 10 декабря 2025 года</p>
             
-            <form action="https://formspree.io/f/your-form-id" method="POST" class="rsvp-form">
+            <form action="https://formspree.io/f/xwprwnpq" method="POST" class="rsvp-form">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                    <label for="full-name">Ваше фамилия и имя:</label>
+                    <input type="text" id="full-name" name="name" required>
                 </div>
                 
                 <div class="form-group">
-                    <select id="guests" name="guests">
-                        <option value="1">1 человек</option>
-                        <option value="2" selected>2 человека</option>
-                        <option value="3">3 человека</option>
-                        <option value="4">4 человека</option>
-                    </select>
+                    <label>Сможете ли вы быть на мероприятии?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="yes" name="attending" value="Да" required>
+                        <label for="yes" class="radio-label">Да</label>
+                        
+                        <input type="radio" id="no" name="attending" value="Нет">
+                        <label for="no" class="radio-label">Нет</label>
+                    </div>
                 </div>
                 
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i>
-                    Отправить ответ
-                </button>
+                <div class="form-group">
+                    <label for="quality">Как вы думаете, какое ваше качество больше всего ценит именинница?</label>
+                    <textarea id="quality" name="valued_quality" rows="4"></textarea>
+                </div>
+                
+                <input type="hidden" name="_subject" value="Новый ответ на приглашение!">
+                <input type="text" name="_gotcha" style="display:none">
+                
+                <button type="submit" class="submit-btn">Отправить ответ</button>
             </form>
         </div>
     </section>
@@ -219,21 +229,21 @@
         // Создание блесток
         function createGlitter() {
             const glitterContainer = document.body;
-            const glitterCount = 150;
+            const glitterCount = 200; // Увеличил количество блесток
             
             for (let i = 0; i < glitterCount; i++) {
                 const glitter = document.createElement('div');
                 glitter.className = 'glitter-particle';
                 glitter.style.left = Math.random() * 100 + 'vw';
-                glitter.style.animationDelay = Math.random() * 8 + 's';
-                glitter.style.animationDuration = (2 + Math.random() * 4) + 's';
-                glitter.style.width = (2 + Math.random() * 6) + 'px';
+                glitter.style.animationDelay = Math.random() * 10 + 's';
+                glitter.style.animationDuration = (2 + Math.random() * 5) + 's';
+                glitter.style.width = (2 + Math.random() * 8) + 'px';
                 glitter.style.height = glitter.style.width;
                 
-                // Добавляем красные блестки
-                if (Math.random() > 0.7) {
-                    glitter.style.background = '#B22222';
-                }
+                // Разные цвета блесток
+                const colors = ['#D4AF37', '#C0C0C0', '#0D5C3E', '#FFFFFF'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                glitter.style.background = randomColor;
                 
                 if (Math.random() > 0.7) {
                     glitter.style.borderRadius = '0';
