@@ -1,1080 +1,151 @@
-/* Базовые сбросы и шрифты */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Добавьте этот CSS в конец файла style.css */
 
-:root {
-    --gold: #C9A96E;
-    --dark-gold: #A88B5D;
-    --light-gold: #E8DFD0;
-    --black: #0A0A0A;
-    --dark-gray: #2A2A2A;
-    --medium-gray: #404040;
-    --light-gray: #666666;
-    --cream: #F5F1E6;
-    --white: #FFFFFF;
-    --transparent-gold: rgba(201, 169, 110, 0.1);
-    --transparent-dark: rgba(10, 10, 10, 0.8);
-}
-
-body {
-    font-family: 'Cormorant Garamond', serif;
-    line-height: 1.6;
-    color: var(--cream);
-    background: var(--black);
-    overflow-x: hidden;
-    font-weight: 400;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Главный экран */
-.hero {
-    background: 
-        linear-gradient(var(--transparent-dark), var(--transparent-dark)),
-        url('party-background.jpg') center/cover;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 2rem;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-/* Юбилейный значок */
-.anniversary-badge {
-    margin-bottom: 3rem;
-}
-
-.number-50 {
-    font-family: 'Playfair Display', serif;
-    font-size: 8rem;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    font-weight: 300;
-}
-
-.years {
-    font-size: 1.2rem;
-    color: var(--light-gold);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-family: 'Lora', serif;
-}
-
-/* Заголовок */
-.main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    color: var(--cream);
-    margin-bottom: 2rem;
-    font-weight: 400;
-    letter-spacing: 2px;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 3rem 0;
-}
-
-.line {
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-
-.deco-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    margin: 0 1.5rem;
-}
-
-.hero-info {
-    margin-top: 2rem;
-}
-
-.subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: var(--light-gold);
-    font-family: 'Lora', serif;
-    font-weight: 400;
-}
-
-.date, .time {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: var(--cream);
-    font-weight: 500;
-}
-
-.theme {
-    font-size: 1.4rem;
-    margin-top: 2rem;
-    color: var(--gold);
-    font-family: 'Lora', serif;
-    font-style: italic;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--gold);
-    font-size: 1.5rem;
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-10px); }
-    60% { transform: translateX(-50%) translateY(-5px); }
-}
-
-/* Секции */
-section {
+/* Секция подарков */
+.gifts {
+    background: var(--dark-gray);
     padding: 5rem 0;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--cream);
-    margin-bottom: 3rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-}
-
-/* Детали события */
-.details {
-    background: var(--dark-gray);
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.detail-card {
-    background: var(--black);
-    padding: 2.5rem 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid var(--medium-gray);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.detail-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.detail-card:hover::before {
-    transform: scaleX(1);
-}
-
-.detail-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold);
-}
-
-.detail-card .icon {
-    font-size: 2rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.detail-card h3 {
-    color: var(--cream);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    font-family: 'Lora', serif;
-}
-
-.detail-card p {
-    color: var(--light-gold);
-    margin-bottom: 0.5rem;
-}
-
-.card-note {
-    font-style: italic;
-    color: var(--light-gray) !important;
-    font-size: 0.9rem;
-}
-
-.map-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--gold);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.map-link:hover {
-    color: var(--light-gold);
-}
-
-/* Приглашение */
-.invitation {
-    background: var(--black);
-}
-
-.message-content {
+.gifts-content {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
-    background: var(--dark-gray);
+    background: var(--black);
     padding: 4rem 3rem;
     border-radius: 8px;
     border: 1px solid var(--medium-gray);
     position: relative;
 }
 
-.message-icon {
+.gift-icon {
     color: var(--gold);
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
 }
 
-.message-content h3 {
-    color: var(--gold);
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
+.gift-text {
+    text-align: left;
 }
 
-.message-content p {
+.gift-text p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--light-gold);
 }
 
-.signature {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    font-style: italic;
-}
-
-/* Расписание */
-.schedule {
-    background: var(--dark-gray);
-}
-
-.timeline {
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 30px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--medium-gray);
-}
-
-.timeline-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.timeline-time {
-    flex: 0 0 80px;
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 1.1rem;
-    font-family: 'Lora', serif;
-}
-
-.timeline-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--gold);
-    border-radius: 50%;
-    margin: 0 1rem;
-    position: relative;
-    z-index: 2;
-    flex-shrink: 0;
-}
-
-.timeline-content {
-    flex: 1;
-    background: var(--black);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--medium-gray);
-}
-
-.timeline-content h4 {
-    color: var(--cream);
-    margin-bottom: 0.5rem;
-    font-family: 'Lora', serif;
-    font-size: 1.2rem;
-}
-
-.timeline-content p {
-    color: var(--light-gold);
-    font-size: 0.95rem;
-}
-
-/* Дресс-код с двумя вертикальными фото */
-.dresscode {
-    background: var(--black);
-    padding: 5rem 0;
-}
-
-.dresscode-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.dresscode-intro {
-    text-align: center;
-    margin-bottom: 4rem;
-    font-size: 1.2rem;
-    color: var(--light-gold);
-    line-height: 1.7;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Компактный вариант с двумя фото */
-.dress-examples-compact {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 3rem;
-    margin-bottom: 4rem;
-}
-
-.dress-example-vertical {
-    display: flex;
-    flex-direction: column;
-    background: var(--dark-gray);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--medium-gray);
-    transition: all 0.3s ease;
-}
-
-.dress-example-vertical:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold);
-    box-shadow: 0 10px 30px rgba(201, 169, 110, 0.15);
-}
-
-.dress-image-vertical {
-    position: relative;
-    overflow: hidden;
-    height: 400px;
-    flex-shrink: 0;
-}
-
-.dress-img-vertical {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.dress-example-vertical:hover .dress-img-vertical {
-    transform: scale(1.03);
-}
-
-.image-overlay-vertical {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.dress-example-vertical:hover .image-overlay-vertical {
-    opacity: 1;
-}
-
-.image-overlay-vertical i {
-    color: var(--white);
-    font-size: 2.5rem;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-}
-
-.dress-example-vertical:hover .image-overlay-vertical i {
-    transform: scale(1);
-}
-
-.dress-info-vertical {
+.phone-gift {
+    background: var(--transparent-gold);
     padding: 2rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border-left: 3px solid var(--gold);
 }
 
-.dress-category-title {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.phone-gift h3 {
     color: var(--gold);
     font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.transfer-info {
+    margin-top: 1.5rem;
+}
+
+.transfer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-bottom: 1.5rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
 }
 
-.dress-category-title i {
-    font-size: 1.3rem;
-}
-
-.dress-features {
-    flex: 1;
-}
-
-.feature-item {
+.transfer-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem 0;
-}
-
-.feature-item i {
-    color: var(--gold);
-    margin-top: 0.2rem;
-    flex-shrink: 0;
-}
-
-.feature-item span {
-    color: var(--light-gold);
-    line-height: 1.5;
-    font-size: 1rem;
-}
-
-/* Общие рекомендации */
-.dress-guidelines {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--medium-gray);
-}
-
-.guideline-card {
-    text-align: center;
-    padding: 2rem 1.5rem;
+    padding: 1rem;
     background: var(--dark-gray);
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid var(--medium-gray);
-    transition: all 0.3s ease;
 }
 
-.guideline-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-3px);
-}
-
-.guideline-icon {
-    font-size: 2.2rem;
+.transfer-item i {
     color: var(--gold);
-    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
 }
 
-.guideline-card h4 {
-    color: var(--cream);
-    margin-bottom: 1rem;
-    font-family: 'Lora', serif;
+.transfer-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.phone-number {
+    color: var(--gold);
     font-size: 1.2rem;
-}
-
-.guideline-card p {
-    color: var(--light-gold);
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-/* Модальное окно для вертикальных фото */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    position: relative;
-    margin: auto;
-    width: 90%;
-    max-width: 500px;
-    max-height: 90vh;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--dark-gray);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid var(--gold);
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    color: var(--white);
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    transition: background 0.3s ease;
-}
-
-.close-modal:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-#modalImage {
-    width: 100%;
-    height: auto;
-    max-height: 70vh;
-    object-fit: contain;
-    display: block;
-}
-
-.image-caption {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.image-caption h3 {
-    color: var(--cream);
-    margin-bottom: 0.5rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-}
-
-.image-caption p {
-    color: var(--light-gold);
-    line-height: 1.5;
-    font-size: 0.9rem;
-}
-
-/* Адаптивность для двух фото */
-@media (max-width: 768px) {
-    .dress-examples-compact {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .dress-image-vertical {
-        height: 300px;
-    }
-    
-    .dress-info-vertical {
-        padding: 1.5rem;
-    }
-    
-    .dress-category-title {
-        font-size: 1.3rem;
-    }
-    
-    .dress-guidelines {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        padding-top: 2rem;
-    }
-    
-    .guideline-card {
-        padding: 1.5rem 1rem;
-    }
-    
-    .modal-content {
-        width: 95%;
-        max-width: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .dress-examples-compact {
-        gap: 1.5rem;
-    }
-    
-    .dress-image-vertical {
-        height: 250px;
-    }
-    
-    .dress-info-vertical {
-        padding: 1rem;
-    }
-    
-    .feature-item {
-        gap: 0.8rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .feature-item span {
-        font-size: 0.9rem;
-    }
-    
-    .dress-guidelines {
-        gap: 1rem;
-    }
-    
-    .modal-content {
-        max-width: 350px;
-    }
-    
-    .image-caption {
-        padding: 1rem;
-    }
-}
-
-/* Для очень высоких вертикальных фото */
-@media (min-width: 769px) {
-    .dress-example-vertical {
-        flex-direction: row;
-        height: 400px;
-    }
-    
-    .dress-image-vertical {
-        width: 50%;
-        height: 100%;
-    }
-    
-    .dress-info-vertical {
-        width: 50%;
-        padding: 2rem;
-    }
-    
-    .modal-content {
-        max-width: 400px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .dress-example-vertical {
-        height: 450px;
-    }
-    
-    .dress-info-vertical {
-        padding: 2.5rem;
-    }
-}
-
-/* Место проведения */
-.venue {
-    background: var(--dark-gray);
-}
-
-.venue-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.venue-info h3 {
-    color: var(--cream);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    font-family: 'Playfair Display', serif;
-}
-
-.venue-info p {
-    color: var(--light-gold);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-}
-
-.venue-link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--gold);
-    text-decoration: none;
-    font-family: 'Lora', serif;
-    transition: color 0.3s ease;
-}
-
-.venue-link:hover {
-    color: var(--light-gold);
-}
-
-.venue-link i {
-    margin-right: 0.5rem;
-}
-
-.venue-image {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--medium-gray);
-}
-
-.venue-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.venue-image:hover img {
-    transform: scale(1.05);
-}
-
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.venue-image:hover .image-overlay {
-    opacity: 1;
-}
-
-.image-overlay i {
-    color: var(--white);
-    font-size: 2rem;
-}
-
-/* RSVP Форма */
-.rsvp {
-    background: var(--black);
-}
-
-.rsvp-subtitle {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--light-gold);
-    font-size: 1.1rem;
-}
-
-.rsvp-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--dark-gray);
-    padding: 3rem;
-    border-radius: 8px;
-    border: 1px solid var(--medium-gray);
-}
-
-.form-group {
-    margin-bottom: 2.5rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.8rem;
-    color: var(--cream);
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-}
-
-.attendance-label {
-    margin-bottom: 1.2rem;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 1rem 1.2rem;
-    background: var(--black);
-    border: 1px solid var(--medium-gray);
-    border-radius: 6px;
-    color: var(--cream);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: var(--dark-gray);
-}
-
-input::placeholder, textarea::placeholder {
-    color: var(--light-gray);
-}
-
-/* Переключатель */
-.toggle-group {
-    display: flex;
-    gap: 1rem;
-}
-
-.toggle-option {
-    flex: 1;
-    position: relative;
-    cursor: pointer;
-}
-
-.toggle-option input {
-    position: absolute;
-    opacity: 0;
-}
-
-.toggle-text {
-    display: block;
-    padding: 1rem 1.5rem;
-    background: var(--black);
-    border: 1px solid var(--medium-gray);
-    border-radius: 6px;
-    text-align: center;
-    transition: all 0.3s ease;
-    color: var(--light-gold);
-}
-
-.toggle-option input:checked + .toggle-text,
-.toggle-option.active .toggle-text {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--black);
-    font-weight: 500;
-}
-
-.toggle-option:hover .toggle-text {
-    border-color: var(--gold);
-}
-
-/* Кнопка отправки */
-.submit-btn {
-    width: 100%;
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    padding: 1.3rem 2rem;
-    font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
     font-family: 'Lora', serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
 }
 
-.submit-btn:hover {
-    background: var(--dark-gold);
-    transform: translateY(-2px);
-}
-
-/* Футер */
-.footer {
-    background: var(--dark-gray);
-    text-align: center;
-    padding: 4rem 0;
-    border-top: 1px solid var(--medium-gray);
-}
-
-.footer p {
+.gift-note {
+    font-style: italic;
     color: var(--light-gold);
-    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--dark-gray);
+    border-radius: 6px;
 }
 
-.footer .signature {
-    font-size: 2rem;
-    margin: 1.5rem 0;
-}
-
-.contact-info {
-    margin-top: 2rem;
-    opacity: 0.8;
-}
-
-.contact-info p {
-    margin-bottom: 0.5rem;
-}
-
-.contact-info i {
-    margin-right: 0.5rem;
-    color: var(--gold);
-}
-
-/* Адаптивность */
+/* Адаптивность для секции подарков */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1.5rem;
-    }
-    
-    .number-50 {
-        font-size: 5rem;
-    }
-    
-    .main-title {
-        font-size: 3rem;
-    }
-    
-    .date, .time {
-        font-size: 1.4rem;
-    }
-    
-    .subtitle, .theme {
-        font-size: 1.2rem;
-    }
-    
-    section {
-        padding: 3rem 0;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .details-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .venue-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .venue-image img {
-        height: 250px;
-    }
-    
-    .rsvp-form {
-        padding: 2rem 1.5rem;
-    }
-    
-    .message-content {
+    .gifts-content {
         padding: 2.5rem 2rem;
     }
     
-    .dress-examples {
-        grid-template-columns: 1fr;
+    .transfer-details {
+        gap: 1rem;
     }
     
-    .toggle-group {
+    .transfer-item {
         flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1.5rem 1rem;
     }
     
-    .timeline::before {
-        left: 20px;
+    .phone-number {
+        font-size: 1.1rem;
     }
     
-    .timeline-time {
-        flex: 0 0 60px;
-        font-size: 1rem;
+    .phone-gift {
+        padding: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
+    .gifts-content {
+        padding: 2rem 1.5rem;
     }
     
-    .number-50 {
-        font-size: 4rem;
-    }
-    
-    .main-title {
+    .gift-icon {
         font-size: 2.5rem;
     }
     
-    .hero-content {
+    .phone-gift {
         padding: 1rem;
     }
     
-    .section-title {
-        font-size: 1.8rem;
+    .transfer-item {
+        padding: 1rem 0.5rem;
     }
     
-    .message-content {
-        padding: 2rem 1.5rem;
-    }
-    
-    .rsvp-form {
-        padding: 1.5rem 1rem;
-    }
-    
-    .detail-card {
-        padding: 2rem 1rem;
-    }
-    
-    .dress-example {
-        padding: 2rem 1.5rem;
+    .phone-number {
+        font-size: 1rem;
     }
 }

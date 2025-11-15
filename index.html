@@ -87,49 +87,8 @@
             </div>
         </div>
     </section>
-    <!-- Расписание -->
-		<!--
-    <section id="schedule" class="schedule">
-        <div class="container">
-            <h2 class="section-title">Программа Вечера</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-time">16:00</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>Фуршет</h4>
-                        <p>Шампанское и закуски</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">17:00</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>Поздравления</h4>
-                        <p>Торжественная часть</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">18:00</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>Ужин</h4>
-                        <p>Праздничный банкет</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">20:00</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>Танцы</h4>
-                        <p>Музыка и развлечения</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-		-->
-	<!-- Дресс-код с двумя фото референсами -->
+
+    <!-- Дресс-код с двумя фото референсами -->
 	<section id="dresscode" class="dresscode">
 		<div class="container">
 			<h2 class="section-title">Дресс-код</h2>
@@ -212,17 +171,6 @@
 		</div>
 	</section>
 
-	<!-- Модальное окно для просмотра фото -->
-	<div id="imageModal" class="modal">
-		<div class="modal-content">
-			<span class="close-modal">&times;</span>
-			<img id="modalImage" src="" alt="Увеличенное изображение наряда">
-			<div class="image-caption">
-				<h3 id="modalTitle"></h3>
-				<p id="modalDescription"></p>
-			</div>
-		</div>
-	</div>
     <!-- Лофт -->
     <section id="venue" class="venue">
         <div class="container">
@@ -253,6 +201,49 @@
         </div>
     </section>
 
+    <!-- Подарки -->
+    <section id="gifts" class="gifts">
+        <div class="container">
+            <h2 class="section-title">Подарки</h2>
+            
+            <div class="gifts-content">
+                <div class="gift-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                
+                <div class="gift-text">
+                    <p>Ваше присутствие на празднике - уже самый лучший подарок! Но если вы хотите порадовать именинницу дополнительно, у нас есть идея.</p>
+                    
+                    <div class="phone-gift">
+                        <h3>Совместный подарок</h3>
+                        <p>Татьяна очень хочет новый телефон. Если вы не знаете, что подарить, мы предлагаем объединиться и сделать общий подарок!</p>
+                        
+                        <div class="transfer-info">
+                            <div class="transfer-details">
+                                <div class="transfer-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <strong>Переведите любую сумму на номер:</strong>
+                                        <span class="phone-number">+7 977 269-13-38</span>
+                                    </div>
+                                </div>
+                                <div class="transfer-item">
+                                    <i class="fas fa-university"></i>
+                                    <div>
+                                        <strong>Банк:</strong>
+                                        <span>Т-Банк</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="gift-note">На собранные средства организаторы купят новый телефон, и вы будете указаны в числе дарителей!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- RSVP -->
     <section id="rsvp" class="rsvp">
         <div class="container">
@@ -277,7 +268,9 @@
                             <input type="radio" name="attending" value="Нет">
                             <span class="toggle-text">К сожалению, не смогу</span>
                         </label>
-                    </div
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="quality">Секретный вопрос: Как вы думаете, какое ваше качество больше всего ценит именинница?</label>
                     <textarea id="quality" name="valued_quality" rows="4" placeholder="Пожалуйста, не делитесь ответом на этот вопрос с именинницей"></textarea>
@@ -304,6 +297,18 @@
         </div>
     </footer>
 
+    <!-- Модальное окно для просмотра фото -->
+	<div id="imageModal" class="modal">
+		<div class="modal-content">
+			<span class="close-modal">&times;</span>
+			<img id="modalImage" src="" alt="Увеличенное изображение наряда">
+			<div class="image-caption">
+				<h3 id="modalTitle"></h3>
+				<p id="modalDescription"></p>
+			</div>
+		</div>
+	</div>
+
     <script>
         // Плавная прокрутка
         document.querySelector('.scroll-indicator').addEventListener('click', function() {
@@ -328,7 +333,7 @@
         }, observerOptions);
 
         // Наблюдаем за карточками и секциями
-        document.querySelectorAll('.detail-card, .timeline-item, .dress-example, .form-group').forEach(el => {
+        document.querySelectorAll('.detail-card, .timeline-item, .dress-example, .form-group, .gifts-content').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
